@@ -1,0 +1,70 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+img{
+    position: absolute;
+    filter: brightness(50%);
+    object-fit: cover;
+    z-index: -99999;
+}
+.inicio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    color: aliceblue;
+    width: 450px;
+    height: 400px;
+    backdrop-filter: blur(10px);
+    font-family: 'Montserrat', sans-serif;
+}
+.login{
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+.informacion{
+    font-size: 20px;
+    margin-bottom: 28px;
+}
+.miInput{
+    font-family: 'Montserrat', sans-serif;
+}
+.miInputB{
+    font-family: 'Montserrat', sans-serif;
+    padding: 4px 30px;
+    border-radius: 20px;
+    font-size: 20px;
+    border:0;
+}
+.alerta1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(128, 0, 0);
+    margin-bottom: 25px;
+    width: 250px;
+    height: 35px;
+    background-color: rgba(241, 149, 149, 0.8);
+    border-radius: 2px;
+    border-width: 1.7px;
+  border-style: solid;
+  border-color: rgb(128, 0, 0);
+}
+input[type="text"],input[type="password"]{
+    border: none;
+    background-color: transparent;
+    border-bottom:2px solid rgb(255, 255, 255) ;
+    color: aliceblue;
+}
+
+input:focus{
+outline: none;
+}
