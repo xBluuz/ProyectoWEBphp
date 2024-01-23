@@ -19,7 +19,7 @@ if (!empty($_POST['aceptar'])) {
 
             
             if ($usuario == 'Administrador') {
-                header('Location: prueba.php');
+                header('Location: ./Paneles/PanelAdmin.php');
             } else if ($usuario == 'Juan') {
                 header('Location: juan.php'); 
             } else {
