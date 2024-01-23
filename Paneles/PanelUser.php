@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styleA.css">
+    <link rel="stylesheet" href="styleU.css">
     <title>Document</title>
 </head>
 
@@ -12,7 +12,7 @@
 
     <header>
         <div class="texto1">
-            <strong>Panel de Administrador</strong>
+            <strong>Panel de Usuario</strong>
         </div>
         <div class="cs">
             <a href="./cs.php">Cerrar Sesion</a>
