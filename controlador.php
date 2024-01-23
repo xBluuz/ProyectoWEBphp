@@ -19,9 +19,9 @@ if (!empty($_POST['aceptar'])) {
 
             
             if ($usuario == 'Administrador') {
-                header('Location: ./Paneles/PanelAdmin.php');
+                header('Location: ./PanelAdmin/PanelAdmin.php');
             } else if ($usuario == 'Juan') {
-                header('Location: juan.php'); 
+                header('Location: ./PanelUser/PanelUser.php'); 
             } else {
                 echo "<div class='alerta1'>Aceso Denegado</div>";
             }
