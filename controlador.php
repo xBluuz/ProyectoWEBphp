@@ -22,6 +22,8 @@ if (!empty($_POST['aceptar'])) {
             if ($nivel === 1) {
                 header('Location: ./PanelAdmin/PanelAdmin.php');
             } else if ($nivel === 2) {
+                header('Location: ./PanelDepartamento/PanelDepartamento.php');
+            } else if ($nivel === 3) {
                 header('Location: ./PanelUser/PanelUser.php');
             } else {
                 echo "<div class='alerta1'>Aceso Denegado</div>";
