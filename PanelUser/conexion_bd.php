@@ -1,3 +1,3 @@
 <?php
-    $conexion=new mysqli("localhost","root","","proyectom");
+    $conexion=new mysqli("localhost","root","","inventariobd");
 ?>

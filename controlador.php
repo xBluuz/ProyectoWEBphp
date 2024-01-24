@@ -10,7 +10,7 @@ if (!empty($_POST['aceptar'])) {
         $contraseña = $_POST["contraseña"];
 
 
-        $stmt = $conexion->prepare("SELECT * FROM login1 WHERE user=? AND password=?");
+        $stmt = $conexion->prepare("SELECT * FROM login WHERE NombreUser=? AND password=?");
 
         $stmt->bind_param('ss', $usuario, $contraseña);
         $stmt->execute();
