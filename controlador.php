@@ -17,22 +17,12 @@ if (!empty($_POST['aceptar'])) {
 
         $result = $stmt->get_result();
         if ($datos = $result->fetch_object()) {
-<<<<<<< HEAD
             $nivel = $datos->nivel;
             $_SESSION['login'] = True;
             if ($nivel === 1) {
                 header('Location: ./PanelAdmin/PanelAdmin.php');
             } else if ($nivel === 2) {
                 header('Location: ./PanelUser/PanelUser.php');
-=======
-            setcookie('login', "True", time() + 0 * 24 * 60 * 60, '/');
-
-            
-            if ($usuario == 'Administrador') {
-                header('Location: ./PanelAdmin/PanelAdmin.php');
-            } else if ($usuario == 'Juan') {
-                header('Location: ./PanelUser/PanelUser.php'); 
->>>>>>> 8d0a6f276e144b7bfea952c8300eb1dfa8300fe0
             } else {
                 echo "<div class='alerta1'>Aceso Denegado</div>";
             }
