@@ -10,14 +10,14 @@ if (!empty($_POST['aceptar'])) {
         $contraseña = $_POST["contraseña"];
 
 
-        $stmt = $conexion->prepare("SELECT * FROM login WHERE NombreUser=? AND password=?");
+        $stmt = $conexion->prepare("SELECT * FROM login WHERE NombreUser=? AND Password=?");
 
         $stmt->bind_param('ss', $usuario, $contraseña);
         $stmt->execute();
 
         $result = $stmt->get_result();
         if ($datos = $result->fetch_object()) {
-            $nivel = $datos->nivel;
+            $nivel = $datos->Nivel;
             $_SESSION['login'] = True;
             if ($nivel === 1) {
                 header('Location: ./PanelAdmin/PanelAdmin.php');
