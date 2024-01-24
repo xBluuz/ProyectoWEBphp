@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="https://images.vexels.com/media/users/3/155299/isolated/preview/1988d1faba4d059eb4461d955af5cf61-x-marca-garabato.png">
     <title>xBluuz - Login</title>
+    
 </head>
 
 <body>
