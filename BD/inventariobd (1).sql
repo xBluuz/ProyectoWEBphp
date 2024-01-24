@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-01-2024 a las 17:19:46
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Tiempo de generación: 24-01-2024 a las 17:35:31
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,9 +41,15 @@ CREATE TABLE `aula` (
 
 CREATE TABLE `departec` (
   `idDepartamento` int(11) NOT NULL,
-  `NombreDepar` varchar(50) NOT NULL,
-  `idJefeDepar` int(11) NOT NULL
+  `NombreDepar` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `departec`
+--
+
+INSERT INTO `departec` (`idDepartamento`, `NombreDepar`) VALUES
+(5, 'Informatica');
 
 -- --------------------------------------------------------
 
@@ -59,6 +65,14 @@ CREATE TABLE `login` (
   `idDepartamento` int(11) NOT NULL,
   `Nivel` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `login`
+--
+
+INSERT INTO `login` (`idUser`, `NombreUser`, `NombreCompleto`, `Password`, `idDepartamento`, `Nivel`) VALUES
+(13, 'Admin', 'Merche Lopez', '1234', 5, 1),
+(16, 'Juan', 'Juan Antonio', '1234', 5, 2);
 
 -- --------------------------------------------------------
 
@@ -140,8 +154,7 @@ ALTER TABLE `aula`
 -- Indices de la tabla `departec`
 --
 ALTER TABLE `departec`
-  ADD PRIMARY KEY (`idDepartamento`),
-  ADD KEY `idJefeDepar` (`idJefeDepar`);
+  ADD PRIMARY KEY (`idDepartamento`);
 
 --
 -- Indices de la tabla `login`
@@ -198,13 +211,13 @@ ALTER TABLE `aula`
 -- AUTO_INCREMENT de la tabla `departec`
 --
 ALTER TABLE `departec`
-  MODIFY `idDepartamento` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idDepartamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `login`
 --
 ALTER TABLE `login`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `marca`
@@ -248,18 +261,10 @@ ALTER TABLE `aula`
   ADD CONSTRAINT `aula_ibfk_2` FOREIGN KEY (`idUbicacion`) REFERENCES `ubi` (`idUbicacion`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `departec`
---
-ALTER TABLE `departec`
-  ADD CONSTRAINT `departec_ibfk_1` FOREIGN KEY (`idJefeDepar`) REFERENCES `login` (`iduser`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `departec_ibfk_2` FOREIGN KEY (`idDepartamento`) REFERENCES `login` (`idDepartamento`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Filtros para la tabla `login`
 --
 ALTER TABLE `login`
-  ADD CONSTRAINT `login_ibfk_1` FOREIGN KEY (`idDepartamento`) REFERENCES `departec` (`idDepartamento`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `login_ibfk_2` FOREIGN KEY (`idUser`) REFERENCES `departec` (`idJefeDepar`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `login_ibfk_1` FOREIGN KEY (`idDepartamento`) REFERENCES `departec` (`idDepartamento`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `materiales`
