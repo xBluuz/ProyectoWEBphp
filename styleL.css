@@ -67,10 +67,10 @@ outline: none;
 .contenedorAlerta{
     display: flex;
     justify-content: center;
-    margin-top: 20px;
     position: absolute;
     width: 100%;
     z-index: 9999;
+    margin-top: 5px;
 }
 
 .alerta1{
@@ -98,22 +98,22 @@ outline: none;
 
 @keyframes hideAnimation {
     0% {
-        opacity: 1;
+        /* opacity: 1; */
         transform: translateY(0px);
     }
     100% {
-        opacity: 0;
-        transform: translateY(-20px);
+        /* opacity: 0; */
+        transform: translateY(-200px);
         display: none;
     }
 }
 @keyframes alerta1Animation {
     0% {
-        opacity: 0;
-        transform: translateY(-20px);
+        /* opacity: 0; */
+        transform: translateY(-200px);
     }
     100% {
-        opacity: 1;
+        /* opacity: 1; */
         transform: translateY(0);
     }
 }
