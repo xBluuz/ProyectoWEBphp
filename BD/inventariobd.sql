@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-01-2024 a las 17:35:31
+-- Tiempo de generación: 25-01-2024 a las 18:29:23
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -28,10 +28,18 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `aula` (
-  `idAula` int(11) NOT NULL,
+  `idAula` varchar(3) NOT NULL,
   `idUbicacion` int(11) NOT NULL,
   `idDepartamento` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `aula`
+--
+
+INSERT INTO `aula` (`idAula`, `idUbicacion`, `idDepartamento`) VALUES
+('2T3', 2, 1),
+('2T4', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -49,7 +57,12 @@ CREATE TABLE `departec` (
 --
 
 INSERT INTO `departec` (`idDepartamento`, `NombreDepar`) VALUES
-(5, 'Informatica');
+(1, 'Informatica'),
+(2, 'Mecanizado'),
+(3, 'Telecomunicaciones'),
+(4, 'Róbotica'),
+(5, 'Automoción'),
+(6, 'Electricidad');
 
 -- --------------------------------------------------------
 
@@ -71,8 +84,8 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`idUser`, `NombreUser`, `NombreCompleto`, `Password`, `idDepartamento`, `Nivel`) VALUES
-(13, 'Admin', 'Merche Lopez', '1234', 5, 1),
-(16, 'Juan', 'Juan Antonio', '1234', 5, 2);
+(13, 'Admin', 'Merche Lopez', '1234', 1, 1),
+(16, 'Juan', 'Juan Antonio', '1234', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -85,6 +98,16 @@ CREATE TABLE `marca` (
   `NombreMarca` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `marca`
+--
+
+INSERT INTO `marca` (`idMarca`, `NombreMarca`) VALUES
+(1, 'Dell'),
+(2, 'Fujitsu siemens'),
+(3, 'Fabricación propia'),
+(4, 'Logitech');
+
 -- --------------------------------------------------------
 
 --
@@ -94,7 +117,7 @@ CREATE TABLE `marca` (
 CREATE TABLE `materiales` (
   `idMateriales` int(11) NOT NULL,
   `NombreMat` varchar(30) NOT NULL,
-  `idAula` int(11) NOT NULL,
+  `idAula` varchar(3) NOT NULL,
   `Cantidad` int(11) NOT NULL,
   `idProveedor` int(11) NOT NULL,
   `idMarca` int(11) NOT NULL
@@ -127,6 +150,15 @@ CREATE TABLE `tipoprod` (
   `NombreTipo` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `tipoprod`
+--
+
+INSERT INTO `tipoprod` (`idTipo`, `NombreTipo`) VALUES
+(1, 'Papeleria'),
+(2, 'Tecnología'),
+(3, 'Carpintería');
+
 -- --------------------------------------------------------
 
 --
@@ -137,6 +169,14 @@ CREATE TABLE `ubi` (
   `idUbicacion` int(11) NOT NULL,
   `NombreUbicacion` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `ubi`
+--
+
+INSERT INTO `ubi` (`idUbicacion`, `NombreUbicacion`) VALUES
+(1, 'Pabellón'),
+(2, 'Edificio Talleres');
 
 --
 -- Índices para tablas volcadas
@@ -202,16 +242,10 @@ ALTER TABLE `ubi`
 --
 
 --
--- AUTO_INCREMENT de la tabla `aula`
---
-ALTER TABLE `aula`
-  MODIFY `idAula` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `departec`
 --
 ALTER TABLE `departec`
-  MODIFY `idDepartamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idDepartamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `login`
@@ -223,7 +257,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
-  MODIFY `idMarca` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idMarca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `materiales`
@@ -241,13 +275,13 @@ ALTER TABLE `prov`
 -- AUTO_INCREMENT de la tabla `tipoprod`
 --
 ALTER TABLE `tipoprod`
-  MODIFY `idTipo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idTipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `ubi`
 --
 ALTER TABLE `ubi`
-  MODIFY `idUbicacion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idUbicacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
