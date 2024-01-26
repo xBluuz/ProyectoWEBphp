@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-01-2024 a las 18:29:23
+-- Tiempo de generación: 26-01-2024 a las 16:47:07
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `aula` (
-  `idAula` varchar(3) NOT NULL,
+  `idAula` varchar(5) NOT NULL,
   `idUbicacion` int(11) NOT NULL,
   `idDepartamento` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -38,8 +38,43 @@ CREATE TABLE `aula` (
 --
 
 INSERT INTO `aula` (`idAula`, `idUbicacion`, `idDepartamento`) VALUES
+('1T1', 2, 6),
+('1T2', 2, 6),
+('1T3', 2, 6),
+('1T4', 2, 6),
+('1T5', 2, 4),
+('1T6', 2, 4),
+('1T6.1', 2, 4),
+('1T7', 2, 4),
+('1T8', 2, 4),
+('1T9', 2, 1),
+('2T2', 2, 1),
 ('2T3', 2, 1),
-('2T4', 2, 1);
+('2T4', 2, 1),
+('2T5', 2, 3),
+('2T6', 2, 3),
+('2T7', 2, 3),
+('2T8', 2, 3),
+('2T9', 2, 3),
+('BT.2', 2, 6),
+('BT1.1', 2, 6),
+('BT1.2', 1, 6),
+('BT2', 2, 1),
+('BT3', 2, 1),
+('BT4', 2, 1),
+('BT5', 2, 1),
+('BT6', 2, 6),
+('BT7', 2, 5),
+('BT8', 2, 5),
+('BT8.1', 2, 5),
+('BT8.2', 2, 5),
+('ST1', 2, 2),
+('ST1.1', 2, 2),
+('ST2', 2, 2),
+('ST3', 2, 2),
+('ST4', 2, 2),
+('ST5', 2, 2),
+('ST6', 2, 2);
 
 -- --------------------------------------------------------
 
@@ -117,7 +152,7 @@ INSERT INTO `marca` (`idMarca`, `NombreMarca`) VALUES
 CREATE TABLE `materiales` (
   `idMateriales` int(11) NOT NULL,
   `NombreMat` varchar(30) NOT NULL,
-  `idAula` varchar(3) NOT NULL,
+  `idAula` varchar(5) NOT NULL,
   `Cantidad` int(11) NOT NULL,
   `idProveedor` int(11) NOT NULL,
   `idMarca` int(11) NOT NULL
@@ -245,7 +280,7 @@ ALTER TABLE `ubi`
 -- AUTO_INCREMENT de la tabla `departec`
 --
 ALTER TABLE `departec`
-  MODIFY `idDepartamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `idDepartamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `login`
