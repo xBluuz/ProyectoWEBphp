@@ -2,9 +2,11 @@
 include("./conexion_bd.php");
 
 $inc = true;
-
+// echo $_SESSION['nivel'];
 if ($inc){
-    $consulta = "SELECT departec.NombreDepar FROM login JOIN departec ON login.idDepartamento = departec.idDepartamento WHERE login.Nivel = 2";
+    $consulta = "SELECT d.NombreDepar FROM login AS l 
+    LEFT JOIN departec AS d ON l.idDepartamento = d.idDepartamento 
+    WHERE l.idUser = $_SESSION[nivel]";
     $resultado = mysqli_query($conexion, $consulta);
     if ($resultado){
         while($row = $resultado->fetch_object()){

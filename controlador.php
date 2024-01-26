@@ -19,6 +19,7 @@ if (!empty($_POST['aceptar'])) {
         if ($datos = $result->fetch_object()) {
             $nivel = $datos->Nivel;
             $_SESSION['login'] = True;
+            $_SESSION['nivel'] = $datos->idUser;
             if ($nivel === 1) {
                 header('Location: ./PanelAdmin/PanelAdmin.php');
             } else if ($nivel === 2) {
