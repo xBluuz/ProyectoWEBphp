@@ -37,7 +37,7 @@ if (!empty($_POST['aceptar'])) {
                         </svg>
                     </div>
                     </div>
-                    Aceso Denegado
+                    Acceso Denegado
                 </div>
                 </div>';
             }
@@ -55,7 +55,7 @@ if (!empty($_POST['aceptar'])) {
                     </svg>
                 </div>
                 </div>
-                Aceso Denegado
+                Acceso Denegado
             </div>
             </div>';
         }
