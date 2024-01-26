@@ -20,7 +20,7 @@
 
     <header>
         <div class="texto1">
-            <strong>Panel Administrador de <?php include("./PnA.php")?></strong>
+            <strong>Panel Administrador de <?php include("./DepA.php")?></strong>
         </div>
         <div class="cs">
             <a href="./cs1.php">Cerrar Sesion</a>

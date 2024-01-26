@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-01-2024 a las 17:55:24
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Tiempo de generación: 26-01-2024 a las 22:30:36
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -143,7 +143,9 @@ CREATE TABLE `login` (
 
 INSERT INTO `login` (`idUser`, `NombreUser`, `NombreCompleto`, `Password`, `idDepartamento`, `Nivel`) VALUES
 (13, 'Admin', 'Merche Lopez', '1234', 1, 1),
-(16, 'Juan', 'Juan Antonio', '1234', 1, 2);
+(16, 'Juan', 'Juan Antonio', '1234', 6, 2),
+(17, 'Adri', 'Adrian Morer', '1234', 2, 2),
+(19, 'Javi', 'Javier Morer', '1234', 4, 3);
 
 -- --------------------------------------------------------
 
@@ -321,7 +323,7 @@ ALTER TABLE `filtro_selec`
 -- AUTO_INCREMENT de la tabla `login`
 --
 ALTER TABLE `login`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `marca`

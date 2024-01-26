@@ -20,7 +20,7 @@
 
     <header>
         <div class="texto1">
-            <strong>Panel de Usuario</strong>
+            <strong>Panel Usuario de <?php include("./DepU.php")?></strong>
         </div>
         <div class="cs">
             <a href="./cs2.php">Cerrar Sesion</a>
