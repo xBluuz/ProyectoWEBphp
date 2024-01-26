@@ -2,7 +2,6 @@
 include("./conexion_bd.php");
 
 $inc = true;
-// echo $_SESSION['nivel'];
 if ($inc){
     $consulta = "SELECT d.NombreDepar FROM login AS l 
     LEFT JOIN departec AS d ON l.idDepartamento = d.idDepartamento 
@@ -12,9 +11,7 @@ if ($inc){
         while($row = $resultado->fetch_object()){
             $nombreDepar = $row->NombreDepar;
             ?>
-        
             <?php echo htmlspecialchars($nombreDepar); ?>
-       
         <?php   
         }
     }
