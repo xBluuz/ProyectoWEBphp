@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-01-2024 a las 16:47:07
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Tiempo de generación: 26-01-2024 a las 17:55:24
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -98,6 +98,29 @@ INSERT INTO `departec` (`idDepartamento`, `NombreDepar`) VALUES
 (4, 'Róbotica'),
 (5, 'Automoción'),
 (6, 'Electricidad');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `filtro_selec`
+--
+
+CREATE TABLE `filtro_selec` (
+  `idSelec` int(11) NOT NULL,
+  `Nombre_Selec` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `filtro_selec`
+--
+
+INSERT INTO `filtro_selec` (`idSelec`, `Nombre_Selec`) VALUES
+(1, 'Proveedor'),
+(2, 'Aula'),
+(3, 'Departamento'),
+(4, 'Marca'),
+(5, 'Tipo Producto'),
+(6, 'Ubicacion');
 
 -- --------------------------------------------------------
 
@@ -232,6 +255,12 @@ ALTER TABLE `departec`
   ADD PRIMARY KEY (`idDepartamento`);
 
 --
+-- Indices de la tabla `filtro_selec`
+--
+ALTER TABLE `filtro_selec`
+  ADD PRIMARY KEY (`idSelec`);
+
+--
 -- Indices de la tabla `login`
 --
 ALTER TABLE `login`
@@ -281,6 +310,12 @@ ALTER TABLE `ubi`
 --
 ALTER TABLE `departec`
   MODIFY `idDepartamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT de la tabla `filtro_selec`
+--
+ALTER TABLE `filtro_selec`
+  MODIFY `idSelec` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `login`
