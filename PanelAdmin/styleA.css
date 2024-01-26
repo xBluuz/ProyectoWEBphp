@@ -33,3 +33,22 @@ header {
     color: #000000;
     text-decoration: none;
 }
+.filtros{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+.filtro_principal{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.filtro_secundario{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

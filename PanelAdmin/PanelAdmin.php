@@ -34,17 +34,23 @@
             <a href="./cs1.php">Cerrar Sesion</a>
         </div>
     </header>
-    <main>
+    <main>  
         <div class="filtros">
-            <select name="" id="" class="filtro_principal" onchange="enviarValor(event)" required>
-                <option value="all">Todo</option>
-                    <?php
-                        include ("seleccionar_filtro.php");
-                    ?>
-            </select>
-            <select name="" id="" class="filtro_secundario">
+            <div class="div_filtro_principal">
+                <h2>Ordenar por:</h2>
+                <select name="filtro_principal" id="filtro_principal" class="filtro_principal" onchange="enviarValor(event)" required>
+                    <option value="">Todo</option>
+                        <?php
+                            include ("seleccionar_filtro.php");
+                        ?>
+                </select>
+            </div>
+            <div>
+                <h2>Seleccionar:</h2>
+                <select name="filtro_secundario" id="filtro_secundario" class="filtro_secundario">
 
-            </select>
+                </select>
+            </div>
         </div>
     </main>
 </body>
