@@ -15,7 +15,7 @@
 
 <body>
     <div class="mainContainer">
-    <img src="./Img/fondo.png" width="100%" height="100%">
+    <img src="./Img/fondo.jpg" width="100%" height="100%">
     <form method="post">
         <div class="inicio">
             <div class="login">

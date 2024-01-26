@@ -18,7 +18,7 @@ body{
 
 img{
     position: absolute;
-    filter: brightness(70%);
+    filter: brightness(50%);
     object-fit: cover;
     z-index: -99999;
 }
@@ -57,7 +57,7 @@ input[type="text"],input[type="password"]{
     border: none;
     background-color: transparent;
     border-bottom:2px solid rgb(255, 255, 255) ;
-    color: aliceblue;
+    color: rgb(255, 255, 255);
 }
 
 input:focus{
