@@ -27,7 +27,7 @@
         </div>
     </header>
     <main>
-
+        <?php include("./InformacionU.php")?>
     </main>
 </body>
 
