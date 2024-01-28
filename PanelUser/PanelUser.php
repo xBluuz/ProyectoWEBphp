@@ -67,6 +67,7 @@
                     return cookie.substring(nombre.length, cookie.length);
                 }
             }
+
             return "";
         }
     </script>

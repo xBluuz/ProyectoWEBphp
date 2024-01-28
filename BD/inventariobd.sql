@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-01-2024 a las 18:52:49
+-- Tiempo de generación: 28-01-2024 a las 20:03:24
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -119,7 +119,7 @@ INSERT INTO `filtro_selec` (`idSelec`, `Nombre_Selec`) VALUES
 (2, 'Aula'),
 (3, 'Departamento'),
 (4, 'Marca'),
-(5, 'Tipo Producto'),
+(5, 'TipoProducto'),
 (6, 'Ubicacion');
 
 -- --------------------------------------------------------
