@@ -12,7 +12,7 @@ if ($resultado){
         $idProveedor = $row->Nombre;
         $idMarca = $row->NombreMarca;
         ?>
-        <div>
+        <div class="">
             <p>Nombre del material: <?php echo htmlspecialchars($NombreMat); ?></p>
             <p>Id del aula: <?php echo htmlspecialchars($idAula); ?></p>
             <p>Cantidad: <?php echo htmlspecialchars($Cantidad); ?></p>

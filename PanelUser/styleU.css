@@ -14,6 +14,7 @@ header {
     justify-content: center;
     background-color: rgba(221, 221, 221, 0.959);
 }
+
 .texto1 {
     display: flex;
     justify-content: center;
@@ -21,7 +22,8 @@ header {
     align-items: center;
     font-size: 25px;
 }
-.cs{
+
+.cs {
     position: absolute;
     font-size: 20px;
     width: 100%;
@@ -29,6 +31,7 @@ header {
     justify-content: flex-end;
     margin-right: 40px;
 }
+
 .cs a {
     color: #000000;
     text-decoration: none;
