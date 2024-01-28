@@ -17,10 +17,27 @@
     }
     ?>
     <script>
+        var estado_nav= 0;
         const busqueda = window.location.href.split("?")[0];
         function enviarValor(event){
             let newUrl = busqueda + "?search=" + event.target.value
             window.location.href = newUrl
+        }
+        function activarAnimacion(){
+            if(estado_nav == 0){
+                var filtros = document.querySelector('.filter_var');
+                filtros.classList.toggle('animado');
+                estado_nav = 1;
+                console.log(estado_nav);
+                document.getElementById('boton_filtro').innerHTML = "<";
+            }
+            else{
+                var filtros = document.querySelector('.filter_var');
+                filtros.classList.remove('animado');
+                estado_nav = 0;
+                console.log(estado_nav);
+                document.getElementById('boton_filtro').innerHTML = ">";
+            }
         }
     </script>
 </head>
@@ -35,23 +52,35 @@
             <a href="./cs1.php">Cerrar Sesion</a>
         </div>
     </header>
-    <main>  
-        <div class="filtros">
-            <div class="div_filtro_principal">
-                <h2>Ordenar por:</h2>
-                <select name="filtro_principal" id="filtro_principal" class="filtro_principal" onchange="enviarValor(event)" required>
-                    <option value="">Todo</option>
-                        <?php
-                            include ("seleccionar_filtro.php");
-                        ?>
-                </select>
-            </div>
-            <div>
-                <h2>Seleccionar:</h2>
-                <select name="filtro_secundario" id="filtro_secundario" class="filtro_secundario">
+    <main>
+        <div class="filter_var">
+            <div class="filtros">
+                <div class="div_filtro_principal">
+                    <h2>Ordenar por:</h2>
+                    <select name="filtro_principal" id="filtro_principal" class="filtro_principal" onchange="enviarValor(event)" required>
+                        <option value="">Todo</option>
+                            <?php
+                                include ("seleccionar_filtro.php");
+                            ?>
+                    </select>
+                </div>
+                <div class="div_filtro_secundario">
+                    <h2>Seleccionar:</h2>
+                    <select name="filtro_secundario" id="filtro_secundario" class="filtro_secundario">
 
-                </select>
+                    </select>
+                </div>
+                <div class="div_boton_crear">
+                    <h2>Añadir Inventario:</h2>
+                    <button class="boton_crear" name="boton_crear" id="boton_crear">+</button>
+                </div>
             </div>
+            <div class="div_boton_filtro">
+                <button class="boton_filtro" id="boton_filtro" name="boton_filtro" onclick="activarAnimacion()">></button>
+            </div>
+        </div>
+        <div class="principal">
+
         </div>
     </main>
 </body>
