@@ -90,13 +90,15 @@
                 <div class="div_filtro_principal">
                     <h2>Ordenar por:</h2>
                     <select name="filtro_principal" id="filtro_principal" class="filtro_principal" onchange="enviarValor(event)" required>
-                        <option value="">Todo</option>
+                        <option value="0">Todo</option>
+                        <?php include("./filtro_principal.php") ?>
                     </select>
                 </div>
                 <div class="div_filtro_secundario">
                     <h2>Seleccionar:</h2>
                     <select name="filtro_secundario" id="filtro_secundario" class="filtro_secundario">
                         <option value="">Todo</option>
+                        <?php include("./") ?>
                     </select>
                 </div>
                 <div class="div_boton_crear">

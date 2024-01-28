@@ -1,5 +1,5 @@
 <?php
-    include("../conexion_bd.php");
+    include("./conexion_bd.php");
     function seleccion($required){
         global $conexion;
         $sql="SELECT * FROM filtro_selec";
