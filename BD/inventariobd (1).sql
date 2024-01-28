@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-01-2024 a las 17:55:24
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Tiempo de generación: 28-01-2024 a las 18:52:49
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -143,7 +143,9 @@ CREATE TABLE `login` (
 
 INSERT INTO `login` (`idUser`, `NombreUser`, `NombreCompleto`, `Password`, `idDepartamento`, `Nivel`) VALUES
 (13, 'Admin', 'Merche Lopez', '1234', 1, 1),
-(16, 'Juan', 'Juan Antonio', '1234', 1, 2);
+(16, 'Juan', 'Juan Antonio', '1234', 6, 2),
+(17, 'Adri', 'Adrian Morer', '1234', 2, 2),
+(19, 'Javi', 'Javier Morer', '1234', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -181,6 +183,15 @@ CREATE TABLE `materiales` (
   `idMarca` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `materiales`
+--
+
+INSERT INTO `materiales` (`idMateriales`, `NombreMat`, `idAula`, `Cantidad`, `idProveedor`, `idMarca`) VALUES
+(1, 'Mesa', '2T3', 30, 3, 3),
+(2, 'Silla', 'ST5', 30, 3, 4),
+(4, 'Alfombra', '2T3', 10, 3, 3);
+
 -- --------------------------------------------------------
 
 --
@@ -196,6 +207,13 @@ CREATE TABLE `prov` (
   `Telefono` int(9) NOT NULL,
   `idTipo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `prov`
+--
+
+INSERT INTO `prov` (`idProveedor`, `Nombre`, `Direccion`, `Municipio`, `Provincia`, `Telefono`, `idTipo`) VALUES
+(3, 'Salesianos', 'Don Bosco', 'Zaragoza', 'Zaragoza', 12345, 3);
 
 -- --------------------------------------------------------
 
@@ -321,7 +339,7 @@ ALTER TABLE `filtro_selec`
 -- AUTO_INCREMENT de la tabla `login`
 --
 ALTER TABLE `login`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `marca`
@@ -333,13 +351,13 @@ ALTER TABLE `marca`
 -- AUTO_INCREMENT de la tabla `materiales`
 --
 ALTER TABLE `materiales`
-  MODIFY `idMateriales` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idMateriales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `prov`
 --
 ALTER TABLE `prov`
-  MODIFY `idProveedor` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idProveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `tipoprod`
