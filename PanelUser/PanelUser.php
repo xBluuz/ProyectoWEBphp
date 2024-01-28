@@ -19,8 +19,10 @@
         var estado_nav= 0;
         const busqueda = window.location.href.split("?")[0];
         function enviarValor(event){
+            // event.preventDefault();
             let newUrl = busqueda + "?search=" + event.target.value
             window.location.href = newUrl
+            // window.history.pushState(null, null, "?search=" + event.target.value);
         }
         function activarAnimacion() {
             var estado_nav = obtenerEstadoNav();
@@ -97,8 +99,8 @@
                 <div class="div_filtro_secundario">
                     <h2>Seleccionar:</h2>
                     <select name="filtro_secundario" id="filtro_secundario" class="filtro_secundario">
-                        <option value="">Todo</option>
-                        <?php include("./") ?>
+                        <option value="" selected>Todo</option>
+                        <?php include("./filtro_secundario.php") ?>
                     </select>
                 </div>
                 <div class="div_boton_crear">

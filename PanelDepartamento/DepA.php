@@ -10,9 +10,7 @@ if ($inc){
     if ($resultado){
         while($row = $resultado->fetch_object()){
             $nombreDepar = $row->NombreDepar;
-            ?>
-            <?php echo htmlspecialchars($nombreDepar); ?>
-        <?php   
+            echo htmlspecialchars($nombreDepar); 
         }
     }
 }
