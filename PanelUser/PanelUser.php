@@ -19,11 +19,15 @@
         var estado_nav= 0;
         const busqueda = window.location.href.split("?")[0];
         function enviarValor(event){
-            // event.preventDefault();
             let newUrl = busqueda + "?search=" + event.target.value
             window.location.href = newUrl
-            // window.history.pushState(null, null, "?search=" + event.target.value);
         }
+
+        function send(event){
+            let newUrl = window.location.href.split("&")[0] + "&value=" + event.target.value
+            window.location.href = newUrl
+        }
+
         function activarAnimacion() {
             var estado_nav = obtenerEstadoNav();
 
@@ -93,14 +97,14 @@
                 <div class="div_filtro_principal">
                     <h2>Ordenar por:</h2>
                     <select name="filtro_principal" id="filtro_principal" class="filtro_principal" onchange="enviarValor(event)" required>
-                        <option value="0">Todo</option>
+                        <option value="all">Todo</option>
                         <?php include("./filtro_principal.php") ?>
                     </select>
                 </div>
                 <div class="div_filtro_secundario">
                     <h2>Seleccionar:</h2>
-                    <select name="filtro_secundario" id="filtro_secundario" class="filtro_secundario">
-                        <option value="" selected>Todo</option>
+                    <select name="filtro_secundario" id="filtro_secundario" class="filtro_secundario" onchange="send(event)" >
+                        <option value="all" selected>Todo</option>
                         <?php include("./filtro_secundario.php") ?>
                     </select>
                 </div>
