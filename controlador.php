@@ -20,6 +20,7 @@ if (!empty($_POST['aceptar'])) {
             $nivel = $datos->Nivel;
             $_SESSION['login'] = True;
             $_SESSION['id'] = $datos->idUser;
+            $_SESSION['deparamento'] = $datos->idDepartamento;
             if ($nivel === 1) {
                 header('Location: ./PanelAdmin/PanelAdmin.php');
             } else if ($nivel === 2) {
