@@ -28,7 +28,30 @@
         </div>
     </header>
     <main>
-  
+    <div class="filter_var">
+            <div class="filtros">
+                <div class="div_filtro_principal">
+                    <h2>Ordenar por:</h2>
+                    <select name="filtro_principal" id="filtro_principal" class="filtro_principal"
+                        onchange="enviarValor(event)" required>
+                        <option value="all">Todo</option>
+                        <?php include("./filtro_principal.php") ?>
+                    </select>
+                </div>
+                <div class="div_filtro_secundario">
+                    <h2>Seleccionar:</h2>
+                    <select name="filtro_secundario" id="filtro_secundario" class="filtro_secundario"
+                        onchange="send(event)">
+                        <option value="all" selected>Todo</option>
+                        <?php include("./filtro_secundario.php") ?>
+                    </select>
+                </div>
+            </div>
+            <div class="div_boton_filtro">
+                <button class="boton_filtro" id="boton_filtro" name="boton_filtro"
+                    onclick="activarAnimacion()">></button>
+            </div>
+        </div>
     </main>
 </body>
 
