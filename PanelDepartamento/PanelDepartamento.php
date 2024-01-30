@@ -15,6 +15,65 @@
         header('Location: ../Login.php');
     }
     ?>
+    <script>
+        var estado_nav= 0;
+        const busqueda = window.location.href.split("?")[0];
+        function enviarValor(event){
+            let newUrl = busqueda + "?search=" + event.target.value
+            window.location.href = newUrl
+        }
+        function activarAnimacion() {
+            var estado_nav = obtenerEstadoNav();
+
+            if (estado_nav === "0") {
+                var filtros = document.querySelector('.filter_var');
+                filtros.classList.toggle('animado');
+                filtros.style.transition = "2s";
+                estado_nav = "1";
+                console.log(estado_nav);
+                document.getElementById('boton_filtro').innerHTML = "<";
+            } else {
+                var filtros = document.querySelector('.filter_var');
+                filtros.classList.remove('animado');
+                filtros.style.transition = "0s";
+                estado_nav = "0";
+                console.log(estado_nav);
+                document.getElementById('boton_filtro').innerHTML = ">";
+            }
+            guardarEstadoNav(estado_nav);
+        }
+        function activarAnimacionRefresh() {
+            var estado_nav = obtenerEstadoNav();
+
+            if (estado_nav === "1") {
+                var filtros = document.querySelector('.filter_var');
+                filtros.classList.toggle('animado');
+                filtros.style.transition = "none";
+                document.getElementById('boton_filtro').innerHTML = "<";
+            }
+            if (estado_nav === "0") {
+                var filtros = document.querySelector('.filter_var');
+                filtros.classList.remove('animado');
+                filtros.style.transition = "2s";
+                document.getElementById('boton_filtro').innerHTML = ">";
+            }
+            guardarEstadoNav(estado_nav);
+        }
+        function guardarEstadoNav(estado_nav) {
+            document.cookie = "estado_nav=" + estado_nav + "; expires=Fri, 31 Dec 9999 23:59:59 GMT"+"path=/";
+        }
+        function obtenerEstadoNav() {
+            var nombre = "estado_nav=";
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.indexOf(nombre) === 0) {
+                    return cookie.substring(nombre.length, cookie.length);
+                }
+            }
+            return "";
+        }
+    </script>
 </head>
 
 <body>
