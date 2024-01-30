@@ -16,16 +16,16 @@ function body($consulta, $conexion) {
                 <p>Nombre del material:
                     <?php echo htmlspecialchars($NombreMat); ?>
                 </p>
-                <p>Id del aula:
+                <p>Aula:
                     <?php echo htmlspecialchars($idAula); ?>
                 </p>
                 <p>Cantidad:
                     <?php echo htmlspecialchars($Cantidad); ?>
                 </p>
-                <p>Id del proveedor:
+                <p>Proveedor:
                     <?php echo htmlspecialchars($idProveedor); ?>
                 </p>
-                <p>Id de la marca:
+                <p>Marca:
                     <?php echo htmlspecialchars($idMarca); ?>
                 </p>
             </div>
