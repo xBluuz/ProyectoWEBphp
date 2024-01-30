@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="styleA.css">
     <link rel="shortcut icon" href="../Img/logo_salesianos.png">
     <title>Almacen</title>
-    <?php 
+    <?php
     session_start();
-    if($_SESSION['login']){
-        
-    }else{
+    if ($_SESSION['login']) {
+
+    } else {
         header('Location: ../Login.php');
     }
     ?>
-     <script>
+<script>
         var estado_nav= 0;
         const busqueda = window.location.href.split("?")[0];
         const sig = document.getElementById('boton_filtro')
@@ -59,16 +59,18 @@
 
     <header>
         <div class="texto1">
-            <strong>Panel Administrador de <?php include("./DepA.php")?></strong>
+            <strong>Panel Administrador de
+                <?php include("./DepA.php") ?>
+            </strong>
         </div>
         <div class="cs">
             <a href="./cs1.php">Cerrar Sesion</a>
         </div>
     </header>
     <main>
-    <div class="filter_var">
+        <div class="filter_var" id='modal'>
             <div class="filtros">
-                <div class="div_filtro_principal">
+            <div class="div_filtro_principal">
                     <h2>Ordenar por:</h2>
                     <select name="filtro_principal" id="filtro_principal" class="filtro_principal" onchange="enviarValor(event)" required>
                         <option value="" selected>Todo</option>
@@ -88,7 +90,8 @@
                 </div>
             </div>
             <div class="div_boton_filtro">
-                <button class="boton_filtro" id="boton_filtro" name="boton_filtro" onclick="activarAnimacion()">></button>
+                <button class="boton_filtro" id="boton_filtro" name="boton_filtro"
+                    onclick="activarAnimacion()">></button>
             </div>
         </div>
         <div class="principal">
