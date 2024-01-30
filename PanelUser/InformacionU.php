@@ -50,7 +50,6 @@ if (isset($_GET['search']) && !empty($_GET['search']) || (isset($_GET['value']) 
     INNER JOIN marca AS ma ON m.idMarca = ma.idMarca 
     INNER JOIN tipoprod AS tp ON tp.idTipo = p.idTipo 
     WHERE $type d.idDepartamento  = $_SESSION[deparamento] AND l.idUser = $_SESSION[id]";
-    echo $consulta;
     body($consulta, $conexion);
 } else {
     $consulta = "SELECT m.NombreMat, m.idAula, m.Cantidad,p.Nombre, ma.NombreMarca FROM login AS l 
