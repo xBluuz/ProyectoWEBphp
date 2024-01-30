@@ -18,6 +18,7 @@
     <script>
         var estado_nav= 0;
         const busqueda = window.location.href.split("?")[0];
+        const sig = document.getElementById('boton_filtro')
         function enviarValor(event){
             let newUrl = busqueda + "?search=" + event.target.value
             window.location.href = newUrl
@@ -27,54 +28,29 @@
             let newUrl = window.location.href.split("&")[0] + "&value=" + event.target.value
             window.location.href = newUrl
         }
-
         function activarAnimacion() {
-            var estado_nav = obtenerEstadoNav();
-
-            if (estado_nav === "0") {
-                var filtros = document.querySelector('.filter_var');
-                filtros.classList.toggle('animado');
-                estado_nav = "1";
-                console.log(estado_nav);
-                document.getElementById('boton_filtro').innerHTML = "<";
+            let filtros = document.getElementById('modal');
+            if (localStorage.getItem('estado_nav') == 1) {
+                filtros.classList.remove('animado')
+                filtros.classList.toggle('pickUp')
+                filtros.classList.remove('static')
+                //sig.innerHTML = '>'
+                localStorage.setItem('estado_nav', 0);
             } else {
-                var filtros = document.querySelector('.filter_var');
-                filtros.classList.remove('animado');
-                estado_nav = "0";
-                console.log(estado_nav);
-                document.getElementById('boton_filtro').innerHTML = ">";
-            }
-            guardarEstadoNav(estado_nav);
+                filtros.classList.toggle('animado')
+                //sig.innerHTML = '<'
+                localStorage.setItem('estado_nav', 1);
+            }   
+            
+            
+            
         }
         function activarAnimacionRefresh() {
-            var estado_nav = obtenerEstadoNav();
-
-            if (estado_nav === "1") {
-                var filtros = document.querySelector('.filter_var');
-                filtros.classList.toggle('animado');
-                document.getElementById('boton_filtro').innerHTML = "<";
+            const filtros = document.getElementById('modal');
+            if (localStorage.getItem('estado_nav') == 1) {
+                //sig.innerHTML = '>'
+                filtros.classList.toggle('static')
             }
-            if (estado_nav === "0") {
-                var filtros = document.querySelector('.filter_var');
-                filtros.classList.remove('animado');
-                document.getElementById('boton_filtro').innerHTML = ">";
-            }
-            guardarEstadoNav(estado_nav);
-        }
-        function guardarEstadoNav(estado_nav) {
-            document.cookie = "estado_nav=" + estado_nav + "; expires=Fri, 31 Dec 9999 23:59:59 GMT"+"path=/";
-        }
-        function obtenerEstadoNav() {
-            var nombre = "estado_nav=";
-            var cookies = document.cookie.split(';');
-            for (var i = 0; i < cookies.length; i++) {
-                var cookie = cookies[i].trim();
-                if (cookie.indexOf(nombre) === 0) {
-                    return cookie.substring(nombre.length, cookie.length);
-                }
-            }
-
-            return "";
         }
     </script>
 
@@ -92,7 +68,7 @@
         </div>
     </header>
     <main>
-        <div class="filter_var">
+        <div class="filter_var" id='modal'>
             <div class="filtros">
                 <div class="div_filtro_principal">
                     <h2>Ordenar por:</h2>
