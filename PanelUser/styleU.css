@@ -59,6 +59,7 @@ main{
     margin-left: 1%;
     transform: translateX(0%);
 }
+
 .filtros{
     position: absolute;
     display: flex;

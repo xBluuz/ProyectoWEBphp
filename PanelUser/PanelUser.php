@@ -16,14 +16,18 @@
     }
     ?>
     <script>
-        var estado_nav = 0;
+        var estado_nav= 0;
         const busqueda = window.location.href.split("?")[0];
-        function enviarValor(event) {
-            // event.preventDefault();
+        function enviarValor(event){
             let newUrl = busqueda + "?search=" + event.target.value
             window.location.href = newUrl
-            // window.history.pushState(null, null, "?search=" + event.target.value);
         }
+
+        function send(event){
+            let newUrl = window.location.href.split("&")[0] + "&value=" + event.target.value
+            window.location.href = newUrl
+        }
+
         function activarAnimacion() {
             var estado_nav = obtenerEstadoNav();
 
@@ -58,7 +62,7 @@
             guardarEstadoNav(estado_nav);
         }
         function guardarEstadoNav(estado_nav) {
-            document.cookie = "estado_nav=" + estado_nav + "; expires=Fri, 31 Dec 9999 23:59:59 GMT" + "path=/";
+            document.cookie = "estado_nav=" + estado_nav + "; expires=Fri, 31 Dec 9999 23:59:59 GMT"+"path=/";
         }
         function obtenerEstadoNav() {
             var nombre = "estado_nav=";
@@ -92,25 +96,25 @@
             <div class="filtros">
                 <div class="div_filtro_principal">
                     <h2>Ordenar por:</h2>
-                    <select name="filtro_principal" id="filtro_principal" class="filtro_principal"
-                        onchange="enviarValor(event)" required>
-                        <option value="0">Todo</option>
+                    <select name="filtro_principal" id="filtro_principal" class="filtro_principal" onchange="enviarValor(event)" required>
+                        <option value="all">Todo</option>
                         <?php include("./filtro_principal.php") ?>
                     </select>
                 </div>
-
                 <div class="div_filtro_secundario">
                     <h2>Seleccionar:</h2>
-                        <select name="filtro_secundario" id="filtro_secundario" class="filtro_secundario">
-                            <option value="" selected>Todo</option>
-                            <?php include("./filtro_secundario.php") ?>
-                        </select>
+                    <select name="filtro_secundario" id="filtro_secundario" class="filtro_secundario" onchange="send(event)" >
+                        <option value="all" selected>Todo</option>
+                        <?php include("./filtro_secundario.php") ?>
+                    </select>
                 </div>
-
+                <div class="div_boton_crear">
+                    <h2>Añadir Inventario:</h2>
+                    <button class="boton_crear" name="boton_crear" id="boton_crear">+</button>
+                </div>
             </div>
             <div class="div_boton_filtro">
-                <button class="boton_filtro" id="boton_filtro" name="boton_filtro"
-                    onclick="activarAnimacion()">></button>
+                <button class="boton_filtro" id="boton_filtro" name="boton_filtro" onclick="activarAnimacion()">></button>
             </div>
         </div>
         <div class="principal">
