@@ -12,7 +12,7 @@ function body($consulta, $conexion) {
             $idProveedor = $row->Nombre;
             $idMarca = $row->NombreMarca;
             ?>
-            <div class="">
+            <div class="card">
                 <p>Nombre del material:
                     <?php echo htmlspecialchars($NombreMat); ?>
                 </p>
@@ -31,7 +31,6 @@ function body($consulta, $conexion) {
                 <button>Eliminar</button>
                 <button>Editar</button>
             </div>
-            <hr>
             <?php
         }
     }
