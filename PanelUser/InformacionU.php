@@ -1,8 +1,7 @@
 <?php
 include("./conexion_bd.php");
 
-function body($consulta, $conexion)
-{
+function body($consulta, $conexion){
 
     $resultado = mysqli_query($conexion, $consulta);
     if ($resultado) {

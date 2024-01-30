@@ -13,21 +13,16 @@ function body($consulta, $conexion) {
             $idMarca = $row->NombreMarca;
             ?>
             <div class="card">
-                <p>Nombre del material:
-                    <?php echo htmlspecialchars($NombreMat); ?>
-                </p>
-                <p>Id del aula:
-                    <?php echo htmlspecialchars($idAula); ?>
-                </p>
-                <p>Cantidad:
-                    <?php echo htmlspecialchars($Cantidad); ?>
-                </p>
-                <p>Id del proveedor:
-                    <?php echo htmlspecialchars($idProveedor); ?>
-                </p>
-                <p>Id de la marca:
-                    <?php echo htmlspecialchars($idMarca); ?>
-                </p>
+                <h3>Nombre del material:</h3>
+                <?php echo htmlspecialchars($NombreMat); ?>
+                <h3>Id del aula:</h3>
+                <?php echo htmlspecialchars($idAula); ?>
+                <h3>Cantidad:</h3>
+                <?php echo htmlspecialchars($Cantidad); ?>
+                <h3>Id del proveedor:</h3>
+                <?php echo htmlspecialchars($idProveedor); ?>
+                <h3>Id de la marca:</h3>
+                <?php echo htmlspecialchars($idMarca); ?>
                 <button>Eliminar</button>
                 <button>Editar</button>
             </div>
@@ -42,6 +37,7 @@ if (isset($_GET['search']) && !empty($_GET['search']) || (isset($_GET['value']) 
         'prov' => 'p.Nombre',
         'marca' => 'ma.NombreMarca',
         'tipoprod' => 'tp.NombreTipo ',
+        'ubi' => 'u.NombreUbicacion'
     ];
     $type = "";
     if($_GET['search'] != 'all' && isset($_GET['value']) && $_GET['value'] != 'all'){
@@ -55,8 +51,9 @@ if (isset($_GET['search']) && !empty($_GET['search']) || (isset($_GET['value']) 
     INNER JOIN prov AS p ON m.idProveedor = p.idProveedor 
     INNER JOIN marca AS ma ON m.idMarca = ma.idMarca 
     INNER JOIN tipoprod AS tp ON tp.idTipo = p.idTipo 
+    INNER JOIN ubi AS u ON u.idUbicacion = a.idUbicacion 
     WHERE $type d.idDepartamento  = $_SESSION[deparamento] AND l.idUser = $_SESSION[id]";
-    echo $consulta;
+    //echo $consulta;
     body($consulta, $conexion);
 } else {
     $consulta = "SELECT m.NombreMat, m.idAula, m.Cantidad,p.Nombre, ma.NombreMarca FROM login AS l 
@@ -65,7 +62,8 @@ if (isset($_GET['search']) && !empty($_GET['search']) || (isset($_GET['value']) 
     INNER JOIN materiales AS m ON a.idAula = m.idAula 
     INNER JOIN prov AS p ON m.idProveedor = p.idProveedor 
     INNER JOIN marca AS ma ON m.idMarca = ma.idMarca 
+    INNER JOIN tipoprod AS tp ON tp.idTipo = p.idTipo 
+    INNER JOIN ubi AS u ON u.idUbicacion = a.idUbicacion 
     WHERE d.idDepartamento  = $_SESSION[deparamento] AND l.idUser = $_SESSION[id]";
     body($consulta, $conexion);
 }
-?>
