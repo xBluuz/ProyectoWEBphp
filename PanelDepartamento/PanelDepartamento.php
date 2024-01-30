@@ -22,20 +22,24 @@
             let newUrl = busqueda + "?search=" + event.target.value
             window.location.href = newUrl
         }
+
+        function send(event){
+            let newUrl = window.location.href.split("&")[0] + "&value=" + event.target.value
+            window.location.href = newUrl
+        }
+
         function activarAnimacion() {
             var estado_nav = obtenerEstadoNav();
 
             if (estado_nav === "0") {
                 var filtros = document.querySelector('.filter_var');
                 filtros.classList.toggle('animado');
-                filtros.style.transition = "2s";
                 estado_nav = "1";
                 console.log(estado_nav);
                 document.getElementById('boton_filtro').innerHTML = "<";
             } else {
                 var filtros = document.querySelector('.filter_var');
                 filtros.classList.remove('animado');
-                filtros.style.transition = "0s";
                 estado_nav = "0";
                 console.log(estado_nav);
                 document.getElementById('boton_filtro').innerHTML = ">";
@@ -48,13 +52,11 @@
             if (estado_nav === "1") {
                 var filtros = document.querySelector('.filter_var');
                 filtros.classList.toggle('animado');
-                filtros.style.transition = "none";
                 document.getElementById('boton_filtro').innerHTML = "<";
             }
             if (estado_nav === "0") {
                 var filtros = document.querySelector('.filter_var');
                 filtros.classList.remove('animado');
-                filtros.style.transition = "2s";
                 document.getElementById('boton_filtro').innerHTML = ">";
             }
             guardarEstadoNav(estado_nav);
@@ -71,6 +73,7 @@
                     return cookie.substring(nombre.length, cookie.length);
                 }
             }
+
             return "";
         }
     </script>

@@ -36,19 +36,17 @@ function body($consulta, $conexion) {
     }
 }
 
-if(isset($_GET['search']) && !empty($_GET['search']) || (isset($_GET['value']) && !empty($_GET['value']))){
+if (isset($_GET['search']) && !empty($_GET['search']) || (isset($_GET['value']) && !empty($_GET['value']))) {
     $types = [
         'aula' => 'a.idAula',
-        'prov' => 'p.idProveedor',
-        'marca' => 'm.idMarca',
-        'tipoprod' => 'p.idProveedor ',
-         'all' => '',
+        'prov' => 'p.Nombre',
+        'marca' => 'ma.NombreMarca',
+        'tipoprod' => 'tp.NombreTipo ',
     ];
-    $types = $types[$_GET['search']];
-
-    $type = $_GET['search'] == 'all' || !isset($_GET['value']) ?"" : "$types = '$_GET[value]' AND";
-    if(isset($_GET['value'])){
-        $type =  $_GET['value'] == 'all' ?"" : "$types = '$_GET[value]' AND";
+    $type = "";
+    if($_GET['search'] != 'all' && isset($_GET['value']) && $_GET['value'] != 'all'){
+        $types = $types[$_GET['search']];
+        $type = "$types = '$_GET[value]' AND";
     }
     $consulta = "SELECT m.NombreMat, m.idAula, m.Cantidad,p.Nombre, ma.NombreMarca FROM login AS l 
     INNER JOIN departec AS d ON l.idDepartamento = d.idDepartamento 
@@ -56,10 +54,11 @@ if(isset($_GET['search']) && !empty($_GET['search']) || (isset($_GET['value']) &
     INNER JOIN materiales AS m ON a.idAula = m.idAula 
     INNER JOIN prov AS p ON m.idProveedor = p.idProveedor 
     INNER JOIN marca AS ma ON m.idMarca = ma.idMarca 
+    INNER JOIN tipoprod AS tp ON tp.idTipo = p.idTipo 
     WHERE $type d.idDepartamento  = $_SESSION[deparamento] AND l.idUser = $_SESSION[id]";
+    echo $consulta;
     body($consulta, $conexion);
-
-}else{
+} else {
     $consulta = "SELECT m.NombreMat, m.idAula, m.Cantidad,p.Nombre, ma.NombreMarca FROM login AS l 
     INNER JOIN departec AS d ON l.idDepartamento = d.idDepartamento 
     INNER JOIN aula AS a ON d.idDepartamento = a.idDepartamento 
