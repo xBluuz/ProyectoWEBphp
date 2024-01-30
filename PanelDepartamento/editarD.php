@@ -116,7 +116,7 @@
             </div>
         </div>
         <div class="principal">
-            <?php include("./InformacionD.php") ?>
+           
         </div>
     </main>
 </body>

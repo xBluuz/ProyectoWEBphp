@@ -28,6 +28,8 @@ function body($consulta, $conexion) {
                 <p>Id de la marca:
                     <?php echo htmlspecialchars($idMarca); ?>
                 </p>
+                <button>Eliminar</button>
+                <button>Editar</button>
             </div>
             <hr>
             <?php
@@ -41,7 +43,7 @@ if(isset($_GET['search']) && !empty($_GET['search']) || (isset($_GET['value']) &
         'prov' => 'p.idProveedor',
         'marca' => 'm.idMarca',
         'tipoprod' => 'p.idProveedor ',
-       // 'all' => body($consulta, $conexion),
+         'all' => '',
     ];
     $types = $types[$_GET['search']];
 
