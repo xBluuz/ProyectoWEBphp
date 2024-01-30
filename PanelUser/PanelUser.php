@@ -84,10 +84,6 @@
                         <?php include("./filtro_secundario.php") ?>
                     </select>
                 </div>
-                <div class="div_boton_crear">
-                    <h2>Añadir Inventario:</h2>
-                    <button class="boton_crear" name="boton_crear" id="boton_crear">+</button>
-                </div>
             </div>
             <div class="div_boton_filtro">
                 <button class="boton_filtro" id="boton_filtro" name="boton_filtro" onclick="activarAnimacion()">></button>

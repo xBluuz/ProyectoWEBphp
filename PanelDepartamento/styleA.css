@@ -54,11 +54,22 @@ main{
     transform: translateX(-100%);
     
 }
-.filter_var.animado{
+.animado{
     transition: 2s;
     margin-left: 1%;
     transform: translateX(0%);
 }
+.static{
+    transition: 0;
+    margin-left: 1%;
+    transform: translateX(0%);
+}
+
+.pickUp{
+    transition: 2s;
+    transform: translateX(-100%);
+}
+
 .filtros{
     position: absolute;
     display: flex;
