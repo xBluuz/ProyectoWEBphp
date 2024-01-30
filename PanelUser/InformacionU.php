@@ -24,23 +24,6 @@ function body($consulta, $conexion)
                 <?php echo htmlspecialchars($idProveedor); ?>
                 <h3>Id de la marca:</h3>
                 <?php echo htmlspecialchars($idMarca); ?>
-
-            <div class="">
-                <p>Nombre del material:
-                    <?php echo htmlspecialchars($NombreMat); ?>
-                </p>
-                <p>Aula:
-                    <?php echo htmlspecialchars($idAula); ?>
-                </p>
-                <p>Cantidad:
-                    <?php echo htmlspecialchars($Cantidad); ?>
-                </p>
-                <p>Proveedor:
-                    <?php echo htmlspecialchars($idProveedor); ?>
-                </p>
-                <p>Marca:
-                    <?php echo htmlspecialchars($idMarca); ?>
-                </p>
             </div>
             <?php
         }
