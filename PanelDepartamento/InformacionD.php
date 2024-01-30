@@ -28,6 +28,8 @@ function body($consulta, $conexion) {
                 <p>Id de la marca:
                     <?php echo htmlspecialchars($idMarca); ?>
                 </p>
+                <button>Eliminar</button>
+                <button>Editar</button>
             </div>
             <hr>
             <?php
