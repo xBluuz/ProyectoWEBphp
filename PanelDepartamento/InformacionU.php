@@ -1,8 +1,8 @@
 <?php
 include("./conexion_bd.php");
 
-function body($consulta, $conexion) {
-     
+function body($consulta, $conexion){
+
     $resultado = mysqli_query($conexion, $consulta);
     if ($resultado) {
         while ($row = $resultado->fetch_object()) {
@@ -14,15 +14,15 @@ function body($consulta, $conexion) {
             ?>
             <div class="card">
                 <h3>Nombre del material:</h3>
-                <?php echo htmlspecialchars($NombreMat); ?>
+                <?php echo "<input type='text' value='$NombreMat'>"; ?>
                 <h3>Id del aula:</h3>
-                <?php echo htmlspecialchars($idAula); ?>
+                <?php echo "<input type='text' value='$idAula'>"; ?>
                 <h3>Cantidad:</h3>
-                <?php echo htmlspecialchars($Cantidad); ?>
+                <?php echo "<input type='text' value='$Cantidad'>"; ?>
                 <h3>Id del proveedor:</h3>
-                <?php echo htmlspecialchars($idProveedor); ?>
+                <?php echo "<input type='text' value='$idProveedor'>"; ?>
                 <h3>Id de la marca:</h3>
-                <?php echo htmlspecialchars($idMarca); ?>
+                <?php echo "<input type='text' value='$idMarca'>"; ?>
                 <button>Eliminar</button>
                 <button>Editar</button>
             </div>
