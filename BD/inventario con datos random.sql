@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-01-2024 a las 13:17:44
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Tiempo de generación: 01-02-2024 a las 08:06:18
+-- Versión del servidor: 10.4.22-MariaDB
+-- Versión de PHP: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,7 @@ CREATE TABLE `aula` (
   `idUbicacion` int(11) NOT NULL,
   `idAula` varchar(5) NOT NULL,
   `idDepartamento` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `aula`
@@ -85,7 +85,7 @@ INSERT INTO `aula` (`idUbicacion`, `idAula`, `idDepartamento`) VALUES
 CREATE TABLE `departec` (
   `idDepartamento` int(11) NOT NULL,
   `NombreDepar` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `departec`
@@ -110,7 +110,7 @@ CREATE TABLE `filtro_selec` (
   `Nombre_Selec` varchar(30) NOT NULL,
   `value` varchar(50) NOT NULL,
   `idDepartamento` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `filtro_selec`
@@ -136,7 +136,7 @@ CREATE TABLE `login` (
   `Password` text NOT NULL,
   `idDepartamento` int(11) NOT NULL,
   `Nivel` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `login`
@@ -144,8 +144,8 @@ CREATE TABLE `login` (
 
 INSERT INTO `login` (`idUser`, `NombreUser`, `NombreCompleto`, `Password`, `idDepartamento`, `Nivel`) VALUES
 (13, 'Admin', 'Merche Lopez', '1234', 1, 1),
-(16, 'Juan', 'Juan Antonio', '1234', 6, 2),
-(17, 'Adri', 'Adrian Morer', '1234', 2, 2),
+(16, 'Juan', 'Juan Antonio', '1234', 6, 3),
+(17, 'Adri', 'Adrian Morer', '1234', 2, 3),
 (19, 'Javi', 'Javier Morer', '1234', 1, 3);
 
 -- --------------------------------------------------------
@@ -158,7 +158,7 @@ CREATE TABLE `marca` (
   `idMarca` int(11) NOT NULL,
   `NombreMarca` varchar(30) NOT NULL,
   `idDepartamento` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `marca`
@@ -198,7 +198,8 @@ INSERT INTO `marca` (`idMarca`, `NombreMarca`, `idDepartamento`) VALUES
 (31, 'Marca27', 3),
 (32, 'Marca28', 4),
 (33, 'Marca29', 5),
-(34, 'Marca30', 6);
+(34, 'Marca30', 6),
+(35, 'Pinacho', 2);
 
 -- --------------------------------------------------------
 
@@ -214,7 +215,7 @@ CREATE TABLE `materiales` (
   `idProveedor` int(11) NOT NULL,
   `idMarca` int(11) NOT NULL,
   `idDepartamento` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `materiales`
@@ -223,7 +224,26 @@ CREATE TABLE `materiales` (
 INSERT INTO `materiales` (`idMateriales`, `NombreMat`, `idAula`, `Cantidad`, `idProveedor`, `idMarca`, `idDepartamento`) VALUES
 (1, 'Mesa', '2T3', 30, 1, 3, 0),
 (2, 'Silla', 'ST5', 30, 1, 4, 0),
-(4, 'Alfombra', '2T3', 10, 1, 3, 0);
+(4, 'Alfombra', '2T3', 10, 1, 3, 0),
+(5, 'Pantalla', '2T3', 30, 2, 2, 1),
+(6, 'Ordenador', '2T3', 30, 9, 1, 1),
+(7, 'Raton', '2T3', 30, 15, 4, 1),
+(8, 'Teclado', '2T3', 30, 24, 4, 1),
+(9, 'Silla', '2T3', 30, 17, 3, 1),
+(10, 'Mesa', '2T4', 30, 1, 3, 0),
+(11, 'Alfombra', '2T4', 10, 1, 3, 0),
+(12, 'Pantalla', '2T4', 30, 2, 2, 1),
+(13, 'Ordenador', '2T4', 30, 9, 1, 1),
+(14, 'Raton', '2T4', 30, 15, 4, 1),
+(15, 'Teclado', '2T4', 30, 24, 4, 1),
+(16, 'Silla', '2T4', 30, 17, 3, 1),
+(17, 'Mesa', '2T2', 15, 1, 3, 0),
+(18, 'Alfombra', '2T2', 5, 1, 3, 0),
+(19, 'Pantalla', '2T2', 15, 2, 2, 1),
+(20, 'Ordenador', '2T2', 15, 9, 1, 1),
+(21, 'Raton', '2T2', 15, 15, 4, 1),
+(22, 'Teclado', '2T2', 15, 24, 4, 1),
+(23, 'Silla', '2T2', 15, 17, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -240,7 +260,7 @@ CREATE TABLE `prov` (
   `Telefono` int(9) NOT NULL,
   `idTipo` int(11) NOT NULL,
   `idDepartamento` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `prov`
@@ -289,7 +309,7 @@ CREATE TABLE `tipoprod` (
   `idTipo` int(11) NOT NULL,
   `NombreTipo` varchar(40) NOT NULL,
   `idDepartamento` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tipoprod`
@@ -338,7 +358,7 @@ CREATE TABLE `ubi` (
   `idUbicacion` int(11) NOT NULL,
   `NombreUbicacion` varchar(40) NOT NULL,
   `idDepartamento` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `ubi`
@@ -439,13 +459,13 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
-  MODIFY `idMarca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `idMarca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT de la tabla `materiales`
 --
 ALTER TABLE `materiales`
-  MODIFY `idMateriales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idMateriales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `prov`
