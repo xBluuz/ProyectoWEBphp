@@ -11,6 +11,7 @@ function body($consulta, $conexion){
             $Cantidad = $row->Cantidad;
             $idProveedor = $row->Nombre;
             $idMarca = $row->NombreMarca;
+            $idMateriales = $row->idMateriales;
             ?>
             <div class="card">
                 <h3>Nombre del material:</h3>
@@ -23,7 +24,7 @@ function body($consulta, $conexion){
                 <?php echo "<input type='text' value='$idProveedor'>"; ?>
                 <h3>Id de la marca:</h3>
                 <?php echo "<input type='text' value='$idMarca'>"; ?>
-                <input type="button" class="btnBorrar" name="btnBorrar" value="Borrar">
+                <a href="./PanelDepartamento.php?borar=<?php echo $idMateriales; ?>"><button>Eliminar</button></a>
                 <button>Editar</button>
             </div>
             <?php
@@ -31,6 +32,22 @@ function body($consulta, $conexion){
     }
     
     
+}
+if (isset($_GET['borar'])) {
+    $borrar_id = $_GET['borar'];
+    $borrar = "DELETE FROM materiales WHERE idMateriales = ?";
+    $stmt = mysqli_prepare($conexion, $borrar);
+    if ($stmt) {
+        mysqli_stmt_bind_param($stmt, "s", $borrar_id);
+        $ejecutar = mysqli_stmt_execute($stmt);
+        if ($ejecutar) {
+            echo "<script>alert('Ha sido Borrado')</script>";
+        } else {
+            echo "Error al ejecutar la consulta: " . mysqli_error($conexion);
+        }
+    } else {
+        echo "Error al preparar la consulta: " . mysqli_error($conexion);
+    }
 }
 if (isset($_GET['search']) && !empty($_GET['search']) || (isset($_GET['value']) && !empty($_GET['value']))) {
     $types = [
