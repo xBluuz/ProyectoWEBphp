@@ -23,14 +23,15 @@ function body($consulta, $conexion){
                 <?php echo "<input type='text' value='$idProveedor'>"; ?>
                 <h3>Id de la marca:</h3>
                 <?php echo "<input type='text' value='$idMarca'>"; ?>
-                <button>Eliminar</button>
+                <input type="button" class="btnBorrar" name="btnBorrar" value="Borrar">
                 <button>Editar</button>
             </div>
             <?php
         }
     }
+    
+    
 }
-
 if (isset($_GET['search']) && !empty($_GET['search']) || (isset($_GET['value']) && !empty($_GET['value']))) {
     $types = [
         'aula' => 'a.idAula',
@@ -44,7 +45,7 @@ if (isset($_GET['search']) && !empty($_GET['search']) || (isset($_GET['value']) 
         $types = $types[$_GET['search']];
         $type = "$types = '$_GET[value]' AND";
     }
-    $consulta = "SELECT m.NombreMat, m.idAula, m.Cantidad,p.Nombre, ma.NombreMarca FROM login AS l 
+    $consulta = "SELECT m.idMateriales,m.NombreMat, m.idAula, m.Cantidad,p.Nombre, ma.NombreMarca FROM login AS l 
     INNER JOIN departec AS d ON l.idDepartamento = d.idDepartamento 
     INNER JOIN aula AS a ON d.idDepartamento = a.idDepartamento 
     INNER JOIN materiales AS m ON a.idAula = m.idAula 
@@ -56,7 +57,7 @@ if (isset($_GET['search']) && !empty($_GET['search']) || (isset($_GET['value']) 
     //echo $consulta;
     body($consulta, $conexion);
 } else {
-    $consulta = "SELECT m.NombreMat, m.idAula, m.Cantidad,p.Nombre, ma.NombreMarca FROM login AS l 
+    $consulta = "SELECT m.idMateriales,m.NombreMat, m.idAula, m.Cantidad,p.Nombre, ma.NombreMarca FROM login AS l 
     INNER JOIN departec AS d ON l.idDepartamento = d.idDepartamento 
     INNER JOIN aula AS a ON d.idDepartamento = a.idDepartamento 
     INNER JOIN materiales AS m ON a.idAula = m.idAula 
