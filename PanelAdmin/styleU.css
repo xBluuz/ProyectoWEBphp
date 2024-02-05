@@ -30,7 +30,7 @@ header {
     justify-content: flex-end;
     align-items: center;
     margin-right: 40px;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 .cs a {
     color: #000000;
@@ -148,10 +148,11 @@ main{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-row-gap: 40px;	
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     background-color: #F2F2F2;
     padding-left: 20px;
-    padding-top: 10px;
+    padding-top: 30px;
+    justify-content: center;
+    align-items: center;
 }
 .card{
     display: flex;
@@ -159,10 +160,12 @@ main{
     justify-content: center;
     align-items: left;
     padding-top: 7.5px;
-    padding-left: 20px;
+    padding-left: 15px;
     padding-bottom: 7.5px;
+    font-size: 20px;
     height: 100%;
-    width: 80%;
+    width: 85%;
+    margin-left: 0px;
     background-color:rgba(221, 189, 189, 0.411);
     border-radius: 25px;
     border: 1px solid rgba(0, 0, 0, 0.5);
@@ -171,7 +174,7 @@ main{
     font-weight: 500;
 }
 .card h3{
-    font-size: 16px;
+    font-size: 20px;
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
     margin: 0;
@@ -184,4 +187,24 @@ main{
     margin-top: 5px;
     margin-right: 5px;
     gap: 5px;
+}
+@media (max-width:1700px){
+    .principal{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+@media (max-width:1600px){
+    .principal{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+@media (max-width:1080px){
+    .principal{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width:680px){
+    .principal{
+        grid-template-columns: 1fr;
+    }
 }
