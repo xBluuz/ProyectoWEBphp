@@ -4,105 +4,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styleA.css">
+    <link rel="stylesheet" href="styleU.css">
     <link rel="shortcut icon" href="../Img/logo_salesianos.png">
     <title>Almacen</title>
-    <?php 
-    include("../conexion_bd.php");
+    <?php
     session_start();
-    if($_SESSION['login']){
-        
-    }else{
+    if ($_SESSION['login']) {
+
+    } else {
         header('Location: ../Login.php');
     }
     ?>
     <script>
         var estado_nav= 0;
         const busqueda = window.location.href.split("?")[0];
+        const sig = document.getElementById('boton_filtro')
         function enviarValor(event){
             let newUrl = busqueda + "?search=" + event.target.value
             window.location.href = newUrl
         }
-        function activarAnimacion() {
-            var estado_nav = obtenerEstadoNav();
 
-            if (estado_nav === "0") {
-                var filtros = document.querySelector('.filter_var');
-                filtros.classList.toggle('animado');
-                filtros.style.transition = "2s";
-                estado_nav = "1";
-                console.log(estado_nav);
-                document.getElementById('boton_filtro').innerHTML = "<";
+        function send(event){
+            let newUrl = window.location.href.split("&")[0] + "&value=" + event.target.value
+            window.location.href = newUrl
+        }
+        function activarAnimacion() {
+            let filtros = document.getElementById('modal');
+            if (localStorage.getItem('estado_nav') == 1) {
+                filtros.classList.remove('animado')
+                filtros.classList.toggle('pickUp')
+                filtros.classList.remove('static')
+                //sig.innerHTML = '>'
+                localStorage.setItem('estado_nav', 0);
             } else {
-                var filtros = document.querySelector('.filter_var');
-                filtros.classList.remove('animado');
-                filtros.style.transition = "0s";
-                estado_nav = "0";
-                console.log(estado_nav);
-                document.getElementById('boton_filtro').innerHTML = ">";
-            }
-            guardarEstadoNav(estado_nav);
+                filtros.classList.toggle('animado')
+                //sig.innerHTML = '<'
+                localStorage.setItem('estado_nav', 1);
+            }   
+            
+            
+            
         }
         function activarAnimacionRefresh() {
-            var estado_nav = obtenerEstadoNav();
-
-            if (estado_nav === "1") {
-                var filtros = document.querySelector('.filter_var');
-                filtros.classList.toggle('animado');
-                filtros.style.transition = "none";
-                document.getElementById('boton_filtro').innerHTML = "<";
+            const filtros = document.getElementById('modal');
+            if (localStorage.getItem('estado_nav') == 1) {
+                //sig.innerHTML = '>'
+                filtros.classList.toggle('static')
             }
-            if (estado_nav === "0") {
-                var filtros = document.querySelector('.filter_var');
-                filtros.classList.remove('animado');
-                filtros.style.transition = "2s";
-                document.getElementById('boton_filtro').innerHTML = ">";
-            }
-            guardarEstadoNav(estado_nav);
         }
-        function guardarEstadoNav(estado_nav) {
-            document.cookie = "estado_nav=" + estado_nav + "; expires=Fri, 31 Dec 9999 23:59:59 GMT"+"path=/";
-        }
-        function obtenerEstadoNav() {
-            var nombre = "estado_nav=";
-            var cookies = document.cookie.split(';');
-            for (var i = 0; i < cookies.length; i++) {
-                var cookie = cookies[i].trim();
-                if (cookie.indexOf(nombre) === 0) {
-                    return cookie.substring(nombre.length, cookie.length);
-                }
+        function ConfirmDelete() {
+            var respuesta = confirm("¿Estas seguro que deseas eliminar este registro?");
+            if (respuesta == true) {
+                return true;
+            } else {
+                return false;
             }
-            return "";
         }
     </script>
+
 </head>
 
 <body onload='activarAnimacionRefresh()'>
-
     <header>
         <div class="texto1">
-            <strong>Panel de Administrador</strong>
+            <strong>Panel Administrador
+            </strong>
         </div>
         <div class="cs">
-            <a href="./cs1.php">Cerrar Sesion</a>
+            <a href="./cs2.php">Cerrar Sesion</a>
         </div>
     </header>
     <main>
-        <div class="filter_var">
+        <div class="filter_var" id='modal'>
             <div class="filtros">
                 <div class="div_filtro_principal">
                     <h2>Ordenar por:</h2>
                     <select name="filtro_principal" id="filtro_principal" class="filtro_principal" onchange="enviarValor(event)" required>
-                        <option value="">Todo</option>
-                            <?php
-                                include ("seleccionar_filtro.php");
-                            ?>
+                        <option value="" selected>Todo</option>
+                        <?php include("./filtro_principal.php") ?>
                     </select>
                 </div>
                 <div class="div_filtro_secundario">
                     <h2>Seleccionar:</h2>
-                    <select name="filtro_secundario" id="filtro_secundario" class="filtro_secundario">
-
+                    <select name="filtro_secundario" id="filtro_secundario" class="filtro_secundario" onchange="send(event)" >
+                        <option value="all" selected>Todo</option>
+                        <?php include("./filtro_secundario.php") ?>
                     </select>
                 </div>
                 <div class="div_boton_crear">
@@ -115,7 +101,7 @@
             </div>
         </div>
         <div class="principal">
-
+            <?php include("./InformacionU.php") ?>
         </div>
     </main>
 </body>
