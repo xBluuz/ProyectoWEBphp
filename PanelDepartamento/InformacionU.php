@@ -24,7 +24,7 @@ function body($consulta, $conexion){
                 <?php echo "<input type='text' value='$idProveedor'>"; ?>
                 <h3>Id de la marca:</h3>
                 <?php echo "<input type='text' value='$idMarca'>"; ?>
-                <a href="./PanelDepartamento.php?borrar=<?php echo $idMateriales; ?>"><button>Eliminar</button></a>
+                <a href="./PanelDepartamento.php?borrar=<?php echo $idMateriales; ?>" onclick="return ConfirmDelete()"><button>Eliminar</button></a>
                 <button>Editar</button>
             </div>
             <?php
@@ -41,7 +41,7 @@ if (isset($_GET['borrar'])) {
         mysqli_stmt_bind_param($stmt, "s", $borrar_id);
         $ejecutar = mysqli_stmt_execute($stmt);
         if ($ejecutar) {
-            echo "<script>alert('Ha sido Borrado')</script>";
+            
         } else {
             echo "Error al ejecutar la consulta: " . mysqli_error($conexion);
         }

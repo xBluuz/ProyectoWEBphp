@@ -52,6 +52,14 @@
                 filtros.classList.toggle('static')
             }
         }
+        function ConfirmDelete() {
+            var respuesta = confirm("¿Estas seguro que deseas eliminar este registro?");
+            if (respuesta == true) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     </script>
 
 </head>
