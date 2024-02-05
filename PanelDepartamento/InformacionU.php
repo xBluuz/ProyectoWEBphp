@@ -42,7 +42,7 @@ if (isset($_GET['borrar'])) {
         mysqli_stmt_bind_param($stmt, "s", $borrar_id);
         $ejecutar = mysqli_stmt_execute($stmt);
         if ($ejecutar) {
-            echo "<script>alert('Ha sido Borrado')</script>";
+            
         } else {
             echo "Error al ejecutar la consulta: " . mysqli_error($conexion);
         }
