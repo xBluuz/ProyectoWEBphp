@@ -61,18 +61,18 @@ if (isset($_GET['search']) && !empty($_GET['search']) || (isset($_GET['value']) 
     $type = "";
     if($_GET['search'] != 'all' && isset($_GET['value']) && $_GET['value'] != 'all'){
         $types = $types[$_GET['search']];
-        $type = "$types = '$_GET[value]' AND";
+        $type = "WHERE $types = '$_GET[value]' ";
     }
     $consulta = "SELECT DISTINCT m.idMateriales,m.NombreMat, m.idAula, m.Cantidad,p.Nombre, ma.NombreMarca 
     FROM login AS l 
-    INNER JOIN departec AS d ON 
+    INNER JOIN departec AS d 
     INNER JOIN aula AS a ON d.idDepartamento = a.idDepartamento 
     INNER JOIN materiales AS m ON a.idAula = m.idAula 
     INNER JOIN prov AS p ON m.idProveedor = p.idProveedor 
     INNER JOIN marca AS ma ON m.idMarca = ma.idMarca 
     INNER JOIN tipoprod AS tp ON tp.idTipo = p.idTipo 
     INNER JOIN ubi AS u ON u.idUbicacion = a.idUbicacion 
-    WHERE $type";
+    $type";
     //echo $consulta;
     body($consulta, $conexion);
 } else {
