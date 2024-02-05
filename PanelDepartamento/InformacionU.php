@@ -24,7 +24,7 @@ function body($consulta, $conexion){
                 <?php echo "<input type='text' value='$idProveedor'>"; ?>
                 <h3>Id de la marca:</h3>
                 <?php echo "<input type='text' value='$idMarca'>"; ?>
-                <a href="./PanelDepartamento.php?borar=<?php echo $idMateriales; ?>"><button>Eliminar</button></a>
+                <a href="./PanelDepartamento.php?borrar=<?php echo $idMateriales; ?>"><button>Eliminar</button></a>
                 <button>Editar</button>
             </div>
             <?php
@@ -33,8 +33,8 @@ function body($consulta, $conexion){
     
     
 }
-if (isset($_GET['borar'])) {
-    $borrar_id = $_GET['borar'];
+if (isset($_GET['borrar'])) {
+    $borrar_id = $_GET['borrar'];
     $borrar = "DELETE FROM materiales WHERE idMateriales = ?";
     $stmt = mysqli_prepare($conexion, $borrar);
     if ($stmt) {
