@@ -66,7 +66,7 @@
             }
             ?>
         </select>
-        <?php include("./procesar.php") ?>
+        <?php include("./Procesar.php") ?>
         <input type="submit" value="send" name="send">
     </form>
 </body>

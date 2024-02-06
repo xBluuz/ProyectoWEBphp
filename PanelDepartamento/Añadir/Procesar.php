@@ -1,21 +1,27 @@
 <?php    
 include("../conexion_bd.php");
 
-function addMateriales($NMaterial, $NAula, $NCantidad, $NProeveedor, $NMarca, $NDepartamento){
+function addMateriales($NMaterial, $NAula, $NCantidad, $NProeveedor, $NMarca, $NDepartamento)
+{
     global $conexion;
-    $NMaterial = $_POST['NMaterial'];
-    $NAula = $_POST['NAula'];
-    $NCantidad = $_POST['NCantidad'];
-    $NProeveedor = $_POST['NProeveedor'];
-    $NMarca = $_POST['NMarca'];
-    $NDepartamento = $_POST['NDepartamento'];
-    $sql = "INSERT INTO materiales (NombreMat ,idAula, Cantidad, idProveedor, idMarca, idDepartamento) VALUES ('$NMaterial', ' $NAula', $NCantidad, $NProeveedor, $NMarca, $NDepartamento)";
-    $resultado = mysqli_query($conexion, $sql); 
-    if ($resultado) {
-        return true;
-    } else {
-        return false;
-    }
+    $sql = "INSERT INTO materiales (NombreMat ,idAula, Cantidad, idProveedor, idMarca, idDepartamento) VALUES (?, ?, ?, ?, ?, ?)";
+    $stmt = $conexion->prepare($sql);
+    $stmt->bind_param("siiiss",$NMaterial, $NAula, $NCantidad, $NProeveedor, $NMarca, $NDepartamento);
 
+    try {
+        $stmt->execute();
+        if ($stmt->affected_rows > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (mysqli_sql_exception $e) {
+
+        if ($e->getCode() == 1062) {
+            return false;
+        } else {
+            throw $e;
+        }
+    }
 }
 ?>
