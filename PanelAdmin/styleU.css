@@ -10,10 +10,10 @@ body {
 header {
     display: flex;
     position: relative;
-    padding: 10px;
     justify-content: center;
+    align-items: center;
     background-color: rgba(221, 221, 221, 0.959);
-    height: 5vh;
+    height: 7.15vh;
 }
 .texto1 {
     display: flex;
@@ -30,7 +30,6 @@ header {
     justify-content: flex-end;
     align-items: center;
     margin-right: 40px;
-    margin-top: 10px;
 }
 .cs a {
     color: #000000;
@@ -150,7 +149,7 @@ main{
     grid-row-gap: 40px;	
     background-color: #F2F2F2;
     padding-left: 20px;
-    padding-top: 30px;
+    margin-top: 60px;
     justify-content: center;
     align-items: center;
 }
@@ -200,10 +199,15 @@ main{
 }
 @media (max-width:1080px){
     .principal{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media (max-width:600px){
+    .principal{
         grid-template-columns: 1fr 1fr;
     }
 }
-@media (max-width:680px){
+@media (max-width:400px){
     .principal{
         grid-template-columns: 1fr;
     }
