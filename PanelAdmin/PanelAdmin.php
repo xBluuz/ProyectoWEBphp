@@ -68,11 +68,12 @@
 <body onload='activarAnimacionRefresh()'>
     <header>
         <div class="texto1">
-            <strong>Panel Administrador
-            </strong>
+            <strong>Panel Administrador</strong>
         </div>
         <div class="cs">
-            <a href="./cs2.php">Cerrar Sesion</a>
+            <div class="cs-button">
+                <a href="./cs2.php">Cerrar Sesion</a>
+            </div>
         </div>
     </header>
     <main>
