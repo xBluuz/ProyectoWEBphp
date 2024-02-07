@@ -60,6 +60,7 @@
                 return false;
             }
         }
+        function
     </script>
 
 </head>
@@ -105,8 +106,10 @@
             <?php include("./InformacionU.php") ?>
         </div>
         <?php 
-        include("./PanelAñadir.php") ?>
+        include("./PanelAñadir.php");
+        include("./PanelEditar.php");
         ?>
+        
     </main>
 </body>
 
