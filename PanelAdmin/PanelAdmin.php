@@ -104,8 +104,10 @@
         </div>
         <div class="principal">
             <?php include("./InformacionU.php") ?>
+            <div class="add">
+                <?php include("./PanelAñadir.php") ?>
+            </div>
         </div>
-        <?php include("./PanelAñadir.php") ?>
     </main>
    
 </body>
