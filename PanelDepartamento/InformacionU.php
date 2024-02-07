@@ -34,22 +34,7 @@ function body($consulta, $conexion){
     }
     
 } 
-if (isset($_GET['borrar'])) {
-    $borrar_id = $_GET['borrar'];
-    $borrar = "DELETE FROM materiales WHERE idMateriales = ?";
-    $stmt = mysqli_prepare($conexion, $borrar);
-    if ($stmt) {
-        mysqli_stmt_bind_param($stmt, "s", $borrar_id);
-        $ejecutar = mysqli_stmt_execute($stmt);
-        if ($ejecutar) {
-            
-        } else {
-            echo "Error al ejecutar la consulta: " . mysqli_error($conexion);
-        }
-    } else {
-        echo "Error al preparar la consulta: " . mysqli_error($conexion);
-    }
-}
+
 if (isset($_GET['search']) && !empty($_GET['search']) || (isset($_GET['value']) && !empty($_GET['value']))) {
     $types = [
         'aula' => 'a.idAula',
