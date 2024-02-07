@@ -1,20 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <form method="post">
+ <form method="post">
         <input type="text" name="NMaterial" id="NMaterial" required placeholder="Material">
         <select name="NAula" id="NAula" required>
             <?php
-            include("../conexion_bd.php");
+            include("./conexion_bd.php");
             $sql = "SELECT * FROM aula";
-            $resultado = mysqli_query($conexion, $sql); // Use $sql instead of $consulta
+            $resultado = mysqli_query($conexion, $sql); 
             if ($resultado) {
                 while ($row = mysqli_fetch_assoc($resultado)) {
                     $idAula = $row['idAula'];
@@ -23,12 +13,12 @@
             }
             ?>
         </select>
-        <input type="number" name="NCantidad" id="NCantidad" required>
+        <input type="number" name="NCantidad" id="NCantidad" required required placeholder="Cantidad">
         <select name="NProeveedor" id="NProeveedor" required >
         <?php
-            include("../conexion_bd.php");
+            include("./conexion_bd.php");
             $sql = "SELECT * FROM prov";
-            $resultado = mysqli_query($conexion, $sql); // Use $sql instead of $consulta
+            $resultado = mysqli_query($conexion, $sql); 
             if ($resultado) {
                 while ($row = mysqli_fetch_assoc($resultado)) {
                     $idProveedor = $row['idProveedor'];
@@ -40,9 +30,9 @@
         </select>
         <select name="NMarca" id="NMarca" required>
         <?php
-            include("../conexion_bd.php");
+            include("./conexion_bd.php");
             $sql = "SELECT * FROM marca";
-            $resultado = mysqli_query($conexion, $sql); // Use $sql instead of $consulta
+            $resultado = mysqli_query($conexion, $sql); 
             if ($resultado) {
                 while ($row = mysqli_fetch_assoc($resultado)) {
                     $idMarca = $row['idMarca'];
@@ -54,9 +44,9 @@
         </select>
         <select name="NDepartamento" id="NDepartamento" required>
         <?php
-            include("../conexion_bd.php");
+            include("./conexion_bd.php");
             $sql = "SELECT * FROM departec";
-            $resultado = mysqli_query($conexion, $sql); // Use $sql instead of $consulta
+            $resultado = mysqli_query($conexion, $sql);
             if ($resultado) {
                 while ($row = mysqli_fetch_assoc($resultado)) {
                     $idDepartamento = $row['idDepartamento'];
@@ -68,9 +58,13 @@
         </select>
         <input type="submit" value="send" name="send">
     </form>
-    <?php
-    include("./Procesar.php")
-    ?>
-</body>
-
-</html>
+<?php    
+    include("./conexion_bd.php");
+    
+    if(isset($_POST['send'])){
+        global $conexion;
+        $sql= "INSERT INTO materiales (NombreMat ,idAula, Cantidad, idProveedor, idMarca, idDepartamento) 
+        VALUES ('$_POST[NMaterial]', '$_POST[NAula]', $_POST[NCantidad], $_POST[NProeveedor], $_POST[NMarca], $_POST[NDepartamento])";
+        mysqli_query($conexion, $sql);  
+    }
+?>

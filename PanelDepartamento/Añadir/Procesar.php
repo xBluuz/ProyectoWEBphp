@@ -1,27 +1,14 @@
 <?php    
 include("../conexion_bd.php");
 
-function addMateriales($NMaterial, $NAula, $NCantidad, $NProeveedor, $NMarca, $NDepartamento)
-{
+if(isset($_POST['send'])){
     global $conexion;
-    $sql = "INSERT INTO materiales (NombreMat ,idAula, Cantidad, idProveedor, idMarca, idDepartamento) VALUES (?, ?, ?, ?, ?, ?)";
-    $stmt = $conexion->prepare($sql);
-    $stmt->bind_param("siiiss",$NMaterial, $NAula, $NCantidad, $NProeveedor, $NMarca, $NDepartamento);
-
-    try {
-        $stmt->execute();
-        if ($stmt->affected_rows > 0) {
-            return true;
-        } else {
-            return false;
-        }
-    } catch (mysqli_sql_exception $e) {
-
-        if ($e->getCode() == 1062) {
-            return false;
-        } else {
-            throw $e;
-        }
-    }
+    $sql= "INSERT INTO materiales (NombreMat ,idAula, Cantidad, idProveedor, idMarca, idDepartamento) 
+    VALUES ('$_POST[NMaterial]', '$_POST[NAula]', $_POST[NCantidad], $_POST[NProeveedor], $_POST[NMarca], $_POST[NDepartamento])";
+    mysqli_query($conexion, $sql);  
 }
+  
+    
+
+
 ?>
