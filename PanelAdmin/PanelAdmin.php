@@ -60,7 +60,14 @@
                 return false;
             }
         }
-        
+        function activarAñadir() {
+            let añadir = document.getElementById('añadir');
+            if (añadir.style.display == 'none') {
+                añadir.style.display = 'flex';
+            } else {
+                añadir.style.display = 'none';
+            }
+        }
     </script>
 
 </head>
@@ -95,7 +102,7 @@
                 </div>
                 <div class="div_boton_crear">
                     <h2>Añadir Inventario:</h2>
-                    <button class="boton_crear" name="boton_crear" id="boton_crear">+</button>
+                    <button class="boton_crear" name="boton_crear" id="boton_crear" onclick="activarAñadir()">+</button>
                 </div>
             </div>
             <div class="div_boton_filtro">
@@ -104,7 +111,7 @@
         </div>
         <div class="principal">
             <?php include("./InformacionU.php") ?>
-            <div class="add">
+            <div class="add" id="añadir" style="display:none;">
                 <?php include("./PanelAñadir.php") ?>
             </div>
         </div>
