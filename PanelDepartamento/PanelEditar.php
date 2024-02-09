@@ -50,12 +50,12 @@
             }
         }
         ?>
-        <input type="submit" value="send" name="send">
+        <input type="submit" value="editarrr" name="editarrr">
 </form>
 <?php
 include("./conexion_bd.php");
 
-if (isset($_POST['send'])) {
+if (isset($_POST['editarrr'])) {
     global $conexion;
     $sql = "UPDATE materiales SET NombreMat = '$_POST[NMaterial]', idAula = '$_POST[NAula]', Cantidad = $_POST[NCantidad], idProveedor = $_POST[NProeveedor], idMarca = $_POST[NMarca] WHERE idMateriales = $id";
     mysqli_query($conexion, $sql);
