@@ -34,7 +34,37 @@ function body($consulta, $conexion){
     }
     
 } 
-
+if (isset($_GET['Editar'])) {
+    $id = $_GET['Editar'];
+    $sql = "SELECT m.idMateriales,m.NombreMat, m.idAula, m.Cantidad,p.Nombre, ma.NombreMarca FROM materiales AS m INNER JOIN prov AS p ON m.idProveedor = p.idProveedor INNER JOIN marca AS ma ON m.idMarca = ma.idMarca WHERE idMateriales = $id";
+    $resultado = mysqli_query($conexion, $sql);
+    if ($resultado) {
+        while ($row = mysqli_fetch_assoc($resultado)) {
+            $NombreMat = $row['NombreMat'];
+            $Aula = $row['idAula'];
+            $Cantidad = $row['Cantidad'];
+            $Proveedor = $row['Nombre'];
+            $Marca = $row['NombreMarca'];
+        }
+    }
+}
+if (isset($_GET['borrar'])) {
+    $borrar_id = $_GET['borrar'];
+    $borrar = "DELETE FROM materiales WHERE idMateriales = ?";
+    $stmt = mysqli_prepare($conexion, $borrar);
+    if ($stmt) {
+        mysqli_stmt_bind_param($stmt, "s", $borrar_id);
+        $ejecutar = mysqli_stmt_execute($stmt);
+        if ($ejecutar) {
+            
+        } else {
+            echo "Error al ejecutar la consulta: " . mysqli_error($conexion);
+        }
+    } else {
+        echo "Error al preparar la consulta: " . mysqli_error($conexion);
+    }
+}
+    
 if (isset($_GET['search']) && !empty($_GET['search']) || (isset($_GET['value']) && !empty($_GET['value']))) {
     $types = [
         'aula' => 'a.idAula',

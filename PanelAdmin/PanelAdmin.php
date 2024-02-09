@@ -69,7 +69,6 @@
             }
         }
     </script>
-
 </head>
 
 <body onload='activarAnimacionRefresh()'>
