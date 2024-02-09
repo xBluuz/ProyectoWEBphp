@@ -60,7 +60,9 @@
                 return false;
             }
         }
-        function
+        function refresh(){
+            refresh
+        }
     </script>
 
 </head>
