@@ -50,7 +50,7 @@
             }
         }
         ?>
-        <input type="submit" value="editarrr" name="editarrr">
+        <input type="submit" value="Editar" name="editarrr">
 </form>
 <?php
 include("./conexion_bd.php");

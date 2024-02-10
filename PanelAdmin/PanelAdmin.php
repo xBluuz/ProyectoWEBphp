@@ -68,6 +68,19 @@
                 añadir.style.display = 'none';
             }
         }
+        function refresh(){
+            refresh
+        }
+        function activarEditar() {
+            let edit = document.getElementById('edit');
+            if (edit.style.display == 'none') {
+                edit.style.display = 'flex';
+                console.log('hola')
+            } else {
+                edit.style.display = 'none';
+                console.log('adios')
+            }
+        }
     </script>
 </head>
 
@@ -112,6 +125,9 @@
             <?php include("./InformacionU.php") ?>
             <div class="add" id="añadir" style="display:none;">
                 <?php include("./PanelAñadir.php") ?>
+            </div>
+            <div class="add"  id="edit" style="display:none;">
+                <?php include("./PanelEditar.php") ?>
             </div>
         </div>
     </main>
