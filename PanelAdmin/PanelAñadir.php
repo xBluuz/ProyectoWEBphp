@@ -14,7 +14,7 @@
             }
             ?>
         </select>
-        <input type="number" name="NCantidad" id="NCantidad" required required placeholder="Cantidad" class="input_add">
+        <input type="number" name="NCantidad" id="NCantidad" required placeholder="Cantidad" class="input_add">
         <select name="NProeveedor" id="NProeveedor" class="select_add" required>
             <?php
             include("./conexion_bd.php");
@@ -59,8 +59,6 @@
         </select>
         <div class="submit_container">
             <input type="submit" value="Send" name="send" class="submit_add">
-
-
         </div>
     </form>
 </div>

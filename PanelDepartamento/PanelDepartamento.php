@@ -60,8 +60,41 @@
                 return false;
             }
         }
-        function refresh(){
-            refresh
+        function activarAñadir() {
+            let añadir = document.getElementById('añadir');
+            if (añadir.style.display == 'none') {
+                añadir.style.display = 'flex';
+            } else {
+                añadir.style.display = 'none';
+            }
+        }
+        function cerrarAñadir(){
+            let añadir = document.getElementById('añadir');
+            if (añadir.style.display == 'flex') {
+                añadir.style.display = 'none';
+            } else {
+                añadir.style.display = 'flex';
+            }
+            console.log('anadir cerrado');
+        }
+        function activarEditar() {
+            let edit = document.getElementById('edit');
+            if (edit.style.display == 'none') {
+                edit.style.display = 'flex';
+                console.log('hola')
+            } else {
+                edit.style.display = 'flex';
+                console.log('adios')
+            }
+        }
+        function cerrarEditar(){
+            let edit = document.getElementById('edit');
+            if (edit.style.display == 'flex') {
+                edit.style.display = 'none';
+            } else {
+                edit.style.display = 'flex';
+            }
+            console.log('anadir cerrado');
         }
     </script>
 
@@ -75,7 +108,9 @@
             </strong>
         </div>
         <div class="cs">
-            <a href="./cs2.php">Cerrar Sesion</a>
+            <div class="cs-button">
+                <a href="./cs2.php">Cerrar Sesion</a>
+            </div>
         </div>
     </header>
     <main>
@@ -97,7 +132,7 @@
                 </div>
                 <div class="div_boton_crear">
                     <h2>Añadir Inventario:</h2>
-                    <button class="boton_crear" name="boton_crear" id="boton_crear">+</button>
+                    <button class="boton_crear" name="boton_crear" id="boton_crear" onclick="activarAñadir()">+</button>
                 </div>
             </div>
             <div class="div_boton_filtro">
@@ -106,12 +141,19 @@
         </div>
         <div class="principal">
             <?php include("./InformacionU.php") ?>
+            <div class="add" id="añadir" style="display:none;">
+                <?php include("./PanelAñadir.php") ?>
+                <div class="div_cerrar_add_button">
+                    <button class="cerrar_add_button" onclick="cerrarAñadir()" id="cerrar_add_button">x</button>
+                </div>
+            </div>
+            <div class="add"  id="edit" style="display:none;">
+                <?php include("./PanelEditar.php") ?>
+                <div class="div_cerrar_add_button">
+                    <button class="cerrar_add_button" onclick="cerrarEditar()" id="cerrar_add_button">x</button>
+                </div>
+            </div>
         </div>
-        <?php 
-        include("./PanelAñadir.php");
-        include("./PanelEditar.php");
-        ?>
-        
     </main>
 </body>
 

@@ -1,19 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+    --i:40%; 
+}
+
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Poppins', sans-serif;
 
-    background-color: #F2F2F2;;
+    background-color: #FFFFFF;;
 }
 header {
     display: flex;
     position: relative;
-    padding: 10px;
     justify-content: center;
-    background-color: rgba(221, 221, 221, 0.959);
-    height: 5vh;
+    align-items: center;
+    background-color: #E71D36;
+    height: 7.15vh;
 }
 .texto1 {
     display: flex;
@@ -21,6 +24,7 @@ header {
     text-align: center;
     align-items: center;
     font-size: 25px;
+    color: #FFFFFF;
 }
 .cs{
     position: absolute;
@@ -30,10 +34,19 @@ header {
     justify-content: flex-end;
     align-items: center;
     margin-right: 40px;
-    margin-top: 5px;
+
 }
-.cs a {
-    color: #000000;
+.cs-button{
+    display: flex;
+    padding: 5px;
+    background-color: #FFFFFF;
+    border: 0px;
+    border-radius: 5px;
+}
+.cs-button a {
+    color: #E71D36;
+    font-family:'Poppins', sans-serif;
+    font-weight: 600;
     text-decoration: none;
 }
 main{
@@ -41,18 +54,18 @@ main{
     flex-direction: row;
     height: 92.85vh;
     width: 100%;
-    align-items: center;
     position: relative;
 }
 .filter_var{
     position: fixed;
     display: flex;
     flex-direction: row;
-    height: 85vh;
+    height: 40vh;
     width: 20%;
     justify-content: flex-end;
     align-items: center;
     transform: translateX(-100%);
+    margin-top: 24px;
     
 }
 .animado{
@@ -70,7 +83,6 @@ main{
     transition: 2s;
     transform: translateX(-100%);
 }
-
 .filtros{
     position: absolute;
     display: flex;
@@ -78,9 +90,10 @@ main{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 85vh;
-    background: linear-gradient(rgba(221, 221, 221, 0.959),rgba(237, 209, 209, 0.567));
+    height: 40vh;
+    background-color: #E71D36;
     border-radius: 25px;
+    box-shadow: -1px 1px 5px rgba(0,0,0,0.75);
 }
 
 .div_filtro_principal{
@@ -94,9 +107,9 @@ main{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 20px;
     background: transparent;
+    font-weight: 500;
     text-align: center;
     width: fit-content;
-    border-bottom:3px solid rgba(221, 189, 189, 0.567) ;
 }
 .div_filtro_secundario{
     display: flex;
@@ -110,7 +123,7 @@ main{
     font-size: 20px;
     background: transparent;
     text-align: center;
-    border-bottom:3px solid rgba(221, 189, 189, 0.567) ;
+    font-weight: 500;
 }
 .div_boton_crear{
     display: flex;
@@ -122,16 +135,16 @@ main{
     border-radius: 25px;
     border: 0;
     font-size: 36px;
+    font-weight: 600;
     width: 200px;
-    color: white;
-    background:linear-gradient(rgba(221, 189, 189, 0.873),rgba(221, 167, 167, 0.959));
+    color: #E71D36;
+    background-color:#FFFFFF;
 }
 .div_boton_filtro{
     position: absolute;
     transform: translateX(50%);
     border: 0;
     border-radius: 50%;
-    background: linear-gradient(rgba(221, 189, 189, 0.873),rgba(221, 167, 167, 0.959));
 }
 .boton_filtro{
     border: 0;
@@ -139,8 +152,9 @@ main{
     width: 80px;
     height: 80px;
     font-size: 52px;
-    color: white;
-    background:linear-gradient(rgba(221, 189, 189, 0.873),rgba(221, 167, 167, 0.959));
+    color: #E71D36;
+    font-weight: 600;
+    background-color:#FFFFFF;
 }
 .principal{
     height: 92.85vh;
@@ -149,9 +163,11 @@ main{
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-row-gap: 40px;	
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    background-color: #F2F2F2;
+    background-color: #FFFFFF;
     padding-left: 20px;
-    padding-top: 10px;
+    padding-top: 20px;
+    align-items: center;
+    justify-content: center;
 }
 .card{
     display: flex;
@@ -163,7 +179,7 @@ main{
     padding-bottom: 7.5px;
     height: 100%;
     width: 80%;
-    background-color:rgba(221, 189, 189, 0.411);
+    background-color:#E71D36;
     border-radius: 25px;
     border: 1px solid rgba(0, 0, 0, 0.5);
     box-shadow: -1px 1px 5px rgba(0,0,0,0.75);
@@ -176,6 +192,7 @@ main{
     font-weight: 800;
     margin: 0;
     padding: 0;
+    color: #FFFFFF;
 }
 .card_icons{
     display: flex;
@@ -184,4 +201,82 @@ main{
     margin-top: 5px;
     margin-right: 5px;
     gap: 5px;
+}
+.add{
+    display: flex;
+    position: fixed;
+    width: 98%;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+.add_pop{
+    background-color: #E71D36;
+    position: absolute;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -1px 1px 5px rgba(0,0,0,0.75);
+    border-radius: 25px;
+}
+.formulario_add{
+    padding: 40px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    position: relative;
+}
+.input_add{
+    font-family: 'Poppins', sans-serif;
+    border: 0px;
+    background-color: transparent;
+    color: #FFFFFF;
+    border-bottom: 3px solid #FFFFFF;
+}
+.input_add::placeholder{
+    color: #FFFFFF;
+}
+.select_add{
+    font-family: 'Poppins', sans-serif;
+    border: 0px;
+    background-color: transparent;
+    color: #FFFFFF;
+    border-bottom: 3px solid #FFFFFF;
+}
+.select_add option{
+    background-color: #E71D36;
+}
+.submit_container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.submit_add{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    background-color: white;
+    color: #E71D36;
+    width: 25%;
+    border: 0;
+    border-radius: 25px;
+}
+.div_cerrar_add_button{
+    position: relative;
+    width: 30%;
+    height: 100%;
+}
+.cerrar_add_button{
+    position: absolute;
+    right: 10px;
+    top: 90px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    background-color: white;
+    color: #E71D36;
+    border: 0;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
 }

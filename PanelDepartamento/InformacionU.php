@@ -26,7 +26,7 @@ function body($consulta, $conexion)
                 <h3>Id de la marca:</h3>
                 <?php echo htmlspecialchars($idMarca) ?>
                 <div class="card_icons">
-                    <a href="./PanelDepartamento.php?Editar=<?php echo $idMateriales; ?>" onclick=""><svg
+                    <a href="./PanelDepartamento.php?Editar=<?php echo $idMateriales; ?>" onclick="activarEditar()"><svg
                             xmlns="http://www.w3.org/2000/svg" height="32" width="32"
                             viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                             <path fill="#000000"
