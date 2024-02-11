@@ -64,7 +64,17 @@
         </div>
     </form>
 </div>
-
+<script>
+    function cerrarAñadir(){
+            let añadir = document.getElementById('añadir');
+            if (añadir.style.display != '') {
+                añadir.style.display = 'none';
+            } else {
+                añadir.style.display = 'flex';
+            }
+            console.log('anadir cerrado');
+        }
+</script>
 <?php
 include("./conexion_bd.php");
 
