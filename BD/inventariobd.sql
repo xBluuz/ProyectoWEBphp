@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-02-2024 a las 09:45:15
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 7.4.27
+-- Tiempo de generación: 11-02-2024 a las 17:43:36
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,7 @@ CREATE TABLE `aula` (
   `idUbicacion` int(11) NOT NULL,
   `idAula` varchar(5) NOT NULL,
   `idDepartamento` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `aula`
@@ -57,7 +57,6 @@ INSERT INTO `aula` (`idUbicacion`, `idAula`, `idDepartamento`) VALUES
 (2, '2T8', 3),
 (2, '2T9', 3),
 (2, 'BT.2', 6),
-(2, 'BT1.1', 6),
 (1, 'BT1.2', 6),
 (2, 'BT2', 1),
 (2, 'BT3', 1),
@@ -85,7 +84,7 @@ INSERT INTO `aula` (`idUbicacion`, `idAula`, `idDepartamento`) VALUES
 CREATE TABLE `departec` (
   `idDepartamento` int(11) NOT NULL,
   `NombreDepar` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `departec`
@@ -110,7 +109,7 @@ CREATE TABLE `filtro_selec` (
   `Nombre_Selec` varchar(30) NOT NULL,
   `value` varchar(50) NOT NULL,
   `idDepartamento` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `filtro_selec`
@@ -136,7 +135,7 @@ CREATE TABLE `login` (
   `Password` text NOT NULL,
   `idDepartamento` int(11) NOT NULL,
   `Nivel` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `login`
@@ -158,7 +157,7 @@ CREATE TABLE `marca` (
   `idMarca` int(11) NOT NULL,
   `NombreMarca` varchar(30) NOT NULL,
   `idDepartamento` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `marca`
@@ -171,7 +170,7 @@ INSERT INTO `marca` (`idMarca`, `NombreMarca`, `idDepartamento`) VALUES
 (4, 'Logitech', 1),
 (5, 'Sin marca', 0),
 (6, 'ProFusion', 2),
-(7, 'Marca3', 3),
+(7, 'AVK', 2),
 (8, 'Marca4', 4),
 (9, 'Marca5', 5),
 (10, 'Marca6', 6),
@@ -200,7 +199,8 @@ INSERT INTO `marca` (`idMarca`, `NombreMarca`, `idDepartamento`) VALUES
 (33, 'Marca29', 5),
 (34, 'Marca30', 6),
 (36, 'Pinacho', 2),
-(37, 'Makita', 2);
+(37, 'Makita', 2),
+(38, 'Big red', 5);
 
 -- --------------------------------------------------------
 
@@ -216,7 +216,7 @@ CREATE TABLE `materiales` (
   `idProveedor` int(11) NOT NULL,
   `idMarca` int(11) NOT NULL,
   `idDepartamento` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `materiales`
@@ -246,7 +246,14 @@ INSERT INTO `materiales` (`idMateriales`, `NombreMat`, `idAula`, `Cantidad`, `id
 (33, 'Aluminios', 'ST1.1', 300, 34, 5, 2),
 (34, 'Silla', 'ST2', 30, 1, 3, 2),
 (35, 'Mesa', 'ST2', 30, 1, 3, 2),
-(36, 'Fluidos Hidráulicos ', 'ST3', 300, 3, 6, 2);
+(36, 'Fluidos Hidráulicos ', 'ST3', 300, 3, 6, 2),
+(37, 'Válvulas ', 'ST4', 20, 4, 7, 2),
+(38, 'Aceros', 'ST5', 500, 5, 5, 2),
+(39, 'Cobre', 'BT1.2', 300, 6, 5, 6),
+(40, 'Hierro', 'BT1.2', 300, 6, 5, 6),
+(41, 'Hierro', '1T1', 300, 6, 5, 6),
+(42, 'Cobre', '1T1', 300, 6, 5, 6),
+(43, 'Gatos hidráulicos', 'BT8', 5, 35, 38, 5);
 
 -- --------------------------------------------------------
 
@@ -263,7 +270,7 @@ CREATE TABLE `prov` (
   `Telefono` int(9) NOT NULL,
   `idTipo` int(11) NOT NULL,
   `idDepartamento` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `prov`
@@ -273,9 +280,9 @@ INSERT INTO `prov` (`idProveedor`, `Nombre`, `Direccion`, `Municipio`, `Provinci
 (1, 'Salesianos', 'Don Bosco', 'Zaragoza', 'Zaragoza', 1234, 3, 0),
 (2, 'Maquinaria Barruiso', 'Polígono Industrial de Barros, Parcela 12 Naves 2 y 3, 39408, Barros, Cantabria', 'Cantabria', 'Cantabria', 942555348, 9, 2),
 (3, 'BOMBAS Y FLUIDOS, S.L', 'C. Alejandro Bell, 11, B, 50014 Zaragoza', 'Zaragoza', 'Zaragoza', 976574127, 9, 2),
-(4, 'Proveedor3', 'Dirección3 Zaragoza', 'Zaragoza', 'Zaragoza', 456789123, 3, 3),
-(5, 'Proveedor4', 'Dirección4 Zaragoza', 'Zaragoza', 'Zaragoza', 789123456, 4, 4),
-(6, 'Proveedor5', 'Dirección5 Zaragoza', 'Zaragoza', 'Zaragoza', 321654987, 5, 5),
+(4, 'Grm ', 'Lugar Monte Perdido, 3, 50015 Zaragoza', 'Zaragoza', 'Zaragoza', 456789123, 9, 2),
+(5, 'AUSA Special Steels | Aceros especiales y Aceros calibrados ', 'Polígono Malpica, Calle D, 19, 50016 Zaragoza', 'Zaragoza', 'Zaragoza', 976138122, 9, 2),
+(6, 'Euroferrasa', 'C. Geranio, 57, 50171 La Puebla de Alfindén, Zaragoza', 'Zaragoza', 'Zaragoza', 628733751, 15, 6),
 (7, 'Proveedor6', 'Dirección6 Zaragoza', 'Zaragoza', 'Zaragoza', 654987321, 6, 6),
 (9, 'Proveedor7', 'Dirección7 Zaragoza', 'Zaragoza', 'Zaragoza', 159357852, 7, 1),
 (10, 'Proveedor8', 'Dirección8 Zaragoza', 'Zaragoza', 'Zaragoza', 753951456, 8, 2),
@@ -301,7 +308,8 @@ INSERT INTO `prov` (`idProveedor`, `Nombre`, `Direccion`, `Municipio`, `Provinci
 (30, 'Proveedor28', 'Dirección28 Zaragoza', 'Zaragoza', 'Zaragoza', 789321456, 28, 4),
 (31, 'Proveedor29', 'Dirección29 Zaragoza', 'Zaragoza', 'Zaragoza', 654789321, 29, 5),
 (32, 'Proveedor30', 'Dirección30 Zaragoza', 'Zaragoza', 'Zaragoza', 987456321, 30, 6),
-(34, 'Velca', 'C. de Monegros, 6, Local, 50003 Zaragoza', 'Zaragoza', 'Zaragoza', 633361705, 9, 2);
+(34, 'Velca', 'C. de Monegros, 6, Local, 50003 Zaragoza', 'Zaragoza', 'Zaragoza', 633361705, 9, 2),
+(35, 'Carretillas HC', 'C. Romero, 6, 50171 La Puebla de Alfindén, Zaragoza', 'Zaragoza', 'Zaragoza', 976455281, 6, 5);
 
 -- --------------------------------------------------------
 
@@ -313,7 +321,7 @@ CREATE TABLE `tipoprod` (
   `idTipo` int(11) NOT NULL,
   `NombreTipo` varchar(40) NOT NULL,
   `idDepartamento` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `tipoprod`
@@ -334,7 +342,7 @@ INSERT INTO `tipoprod` (`idTipo`, `NombreTipo`, `idDepartamento`) VALUES
 (12, 'Motores', 5),
 (13, 'Circuitos eléctricos', 6),
 (14, 'Software', 1),
-(15, 'Metales', 2),
+(15, 'Metales', 6),
 (16, 'Redes', 3),
 (17, 'Inteligencia artificial', 4),
 (18, 'Carrocería', 5),
@@ -362,7 +370,7 @@ CREATE TABLE `ubi` (
   `idUbicacion` int(11) NOT NULL,
   `NombreUbicacion` varchar(40) NOT NULL,
   `idDepartamento` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `ubi`
@@ -463,19 +471,19 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
-  MODIFY `idMarca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `idMarca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de la tabla `materiales`
 --
 ALTER TABLE `materiales`
-  MODIFY `idMateriales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `idMateriales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT de la tabla `prov`
 --
 ALTER TABLE `prov`
-  MODIFY `idProveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `idProveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT de la tabla `tipoprod`
