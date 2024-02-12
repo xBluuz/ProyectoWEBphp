@@ -1,5 +1,5 @@
 <div class="add_pop">
-    <form method="post" class="formulario_add">
+    <form method="post" class="formulario_add" action="InformaAñadir.php">
         <input type="text" name="NMaterial" id="NMaterial" required placeholder="Material" class="input_add">
         <select name="NAula" id="NAula" class="select_add" required>
             <?php
@@ -58,28 +58,8 @@
             ?>
         </select>
         <div class="submit_container">
-            <input type="submit" value="Send" name="send" class="submit_add">
+            <input type="submit" value="Send" name="send" class="submit_add" onclick="refresh()">
         </div>
+    
     </form>
 </div>
-<script>
-    function cerrarAñadir(){
-            let añadir = document.getElementById('añadir');
-            if (añadir.style.display != '') {
-                añadir.style.display = 'none';
-            } else {
-                añadir.style.display = 'flex';
-            }
-            console.log('anadir cerrado');
-        }
-</script>
-<?php
-include("./conexion_bd.php");
-
-if (isset($_POST['send'])) {
-    global $conexion;
-    $sql = "INSERT INTO materiales (NombreMat ,idAula, Cantidad, idProveedor, idMarca, idDepartamento) 
-        VALUES ('$_POST[NMaterial]', '$_POST[NAula]', $_POST[NCantidad], $_POST[NProeveedor], $_POST[NMarca], $_POST[NDepartamento])";
-    mysqli_query($conexion, $sql);
-}
-?>
