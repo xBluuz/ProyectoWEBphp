@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-02-2024 a las 17:43:36
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Tiempo de generación: 12-02-2024 a las 09:31:42
+-- Versión del servidor: 10.4.22-MariaDB
+-- Versión de PHP: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,7 @@ CREATE TABLE `aula` (
   `idUbicacion` int(11) NOT NULL,
   `idAula` varchar(5) NOT NULL,
   `idDepartamento` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `aula`
@@ -62,7 +62,7 @@ INSERT INTO `aula` (`idUbicacion`, `idAula`, `idDepartamento`) VALUES
 (2, 'BT3', 1),
 (2, 'BT4', 1),
 (2, 'BT5', 1),
-(2, 'BT6', 6),
+(2, 'BT6', 5),
 (2, 'BT7', 5),
 (2, 'BT8', 5),
 (2, 'BT8.1', 5),
@@ -84,7 +84,7 @@ INSERT INTO `aula` (`idUbicacion`, `idAula`, `idDepartamento`) VALUES
 CREATE TABLE `departec` (
   `idDepartamento` int(11) NOT NULL,
   `NombreDepar` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `departec`
@@ -109,7 +109,7 @@ CREATE TABLE `filtro_selec` (
   `Nombre_Selec` varchar(30) NOT NULL,
   `value` varchar(50) NOT NULL,
   `idDepartamento` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `filtro_selec`
@@ -135,7 +135,7 @@ CREATE TABLE `login` (
   `Password` text NOT NULL,
   `idDepartamento` int(11) NOT NULL,
   `Nivel` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `login`
@@ -157,7 +157,7 @@ CREATE TABLE `marca` (
   `idMarca` int(11) NOT NULL,
   `NombreMarca` varchar(30) NOT NULL,
   `idDepartamento` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `marca`
@@ -171,9 +171,9 @@ INSERT INTO `marca` (`idMarca`, `NombreMarca`, `idDepartamento`) VALUES
 (5, 'Sin marca', 0),
 (6, 'ProFusion', 2),
 (7, 'AVK', 2),
-(8, 'Marca4', 4),
-(9, 'Marca5', 5),
-(10, 'Marca6', 6),
+(8, 'Blueweld by Telwin.', 5),
+(9, 'KINGBOLEN', 5),
+(10, 'Brembo', 5),
 (11, 'Marca7', 1),
 (12, 'Marca8', 2),
 (13, 'Marca9', 3),
@@ -200,7 +200,8 @@ INSERT INTO `marca` (`idMarca`, `NombreMarca`, `idDepartamento`) VALUES
 (34, 'Marca30', 6),
 (36, 'Pinacho', 2),
 (37, 'Makita', 2),
-(38, 'Big red', 5);
+(38, 'Big red', 5),
+(39, 'Hp', 1);
 
 -- --------------------------------------------------------
 
@@ -216,7 +217,7 @@ CREATE TABLE `materiales` (
   `idProveedor` int(11) NOT NULL,
   `idMarca` int(11) NOT NULL,
   `idDepartamento` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `materiales`
@@ -253,7 +254,22 @@ INSERT INTO `materiales` (`idMateriales`, `NombreMat`, `idAula`, `Cantidad`, `id
 (40, 'Hierro', 'BT1.2', 300, 6, 5, 6),
 (41, 'Hierro', '1T1', 300, 6, 5, 6),
 (42, 'Cobre', '1T1', 300, 6, 5, 6),
-(43, 'Gatos hidráulicos', 'BT8', 5, 35, 38, 5);
+(43, 'Gatos hidráulicos', 'BT8', 5, 35, 38, 5),
+(44, 'Mesas', 'BT2', 20, 1, 3, 1),
+(45, 'Ordenadores', 'BT2', 30, 7, 39, 1),
+(46, 'Sillas', 'BT2', 30, 1, 3, 1),
+(47, 'Mesas ', 'BT3', 20, 1, 3, 1),
+(48, 'Sillas', 'BT3', 30, 1, 3, 1),
+(49, 'Ordenadores', 'BT3', 1, 7, 39, 1),
+(50, 'Mesas ', 'BT4', 20, 1, 3, 1),
+(51, 'Sillas', 'BT4', 30, 1, 3, 1),
+(52, 'Ordenadores', 'BT4', 1, 7, 39, 1),
+(53, 'Mesas', 'BT5', 20, 1, 3, 1),
+(54, 'Ordenadores', 'BT5', 30, 7, 39, 1),
+(55, 'Sillas', 'BT5', 30, 1, 3, 1),
+(56, 'Soldadores Eléctricos', 'BT6', 15, 36, 8, 5),
+(57, 'Comprobador de baterías', 'BT6', 10, 37, 9, 5),
+(58, 'Discos de freno', 'BT7', 50, 38, 10, 5);
 
 -- --------------------------------------------------------
 
@@ -270,7 +286,7 @@ CREATE TABLE `prov` (
   `Telefono` int(9) NOT NULL,
   `idTipo` int(11) NOT NULL,
   `idDepartamento` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `prov`
@@ -283,7 +299,7 @@ INSERT INTO `prov` (`idProveedor`, `Nombre`, `Direccion`, `Municipio`, `Provinci
 (4, 'Grm ', 'Lugar Monte Perdido, 3, 50015 Zaragoza', 'Zaragoza', 'Zaragoza', 456789123, 9, 2),
 (5, 'AUSA Special Steels | Aceros especiales y Aceros calibrados ', 'Polígono Malpica, Calle D, 19, 50016 Zaragoza', 'Zaragoza', 'Zaragoza', 976138122, 9, 2),
 (6, 'Euroferrasa', 'C. Geranio, 57, 50171 La Puebla de Alfindén, Zaragoza', 'Zaragoza', 'Zaragoza', 628733751, 15, 6),
-(7, 'Proveedor6', 'Dirección6 Zaragoza', 'Zaragoza', 'Zaragoza', 654987321, 6, 6),
+(7, 'Pcbox', 'C. de la Corona de Aragón, 14, 50009 Zaragoza', 'Zaragoza', 'Zaragoza', 976557473, 34, 1),
 (9, 'Proveedor7', 'Dirección7 Zaragoza', 'Zaragoza', 'Zaragoza', 159357852, 7, 1),
 (10, 'Proveedor8', 'Dirección8 Zaragoza', 'Zaragoza', 'Zaragoza', 753951456, 8, 2),
 (11, 'Proveedor9', 'Dirección9 Zaragoza', 'Zaragoza', 'Zaragoza', 258147369, 9, 3),
@@ -309,7 +325,10 @@ INSERT INTO `prov` (`idProveedor`, `Nombre`, `Direccion`, `Municipio`, `Provinci
 (31, 'Proveedor29', 'Dirección29 Zaragoza', 'Zaragoza', 'Zaragoza', 654789321, 29, 5),
 (32, 'Proveedor30', 'Dirección30 Zaragoza', 'Zaragoza', 'Zaragoza', 987456321, 30, 6),
 (34, 'Velca', 'C. de Monegros, 6, Local, 50003 Zaragoza', 'Zaragoza', 'Zaragoza', 633361705, 9, 2),
-(35, 'Carretillas HC', 'C. Romero, 6, 50171 La Puebla de Alfindén, Zaragoza', 'Zaragoza', 'Zaragoza', 976455281, 6, 5);
+(35, 'Carretillas HC', 'C. Romero, 6, 50171 La Puebla de Alfindén, Zaragoza', 'Zaragoza', 'Zaragoza', 976455281, 6, 5),
+(36, 'Fercas Soldadura SL', 'Av. de la Jota, 52, 50014 Zaragoza', 'Zaragoza', 'Zaragoza', 976474353, 6, 5),
+(37, 'Baterias Litio', 'C. de Desiderio Escosura, 47, Delicias, 50005 Zaragoza', 'Zaragoza', 'Zaragoza', 629367697, 6, 5),
+(38, 'Frenos Bolca', 'C. del Alcalde Burriel, 7, 50005 Zaragoza', 'Zaragoza', 'Zaragoza', 976550188, 6, 5);
 
 -- --------------------------------------------------------
 
@@ -321,7 +340,7 @@ CREATE TABLE `tipoprod` (
   `idTipo` int(11) NOT NULL,
   `NombreTipo` varchar(40) NOT NULL,
   `idDepartamento` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tipoprod`
@@ -358,7 +377,8 @@ INSERT INTO `tipoprod` (`idTipo`, `NombreTipo`, `idDepartamento`) VALUES
 (28, 'Telefonía móvil', 3),
 (29, 'Drones', 4),
 (30, 'Aceites y lubricantes', 5),
-(31, 'Generadores', 6);
+(31, 'Generadores', 6),
+(34, 'Hardware', 1);
 
 -- --------------------------------------------------------
 
@@ -370,7 +390,7 @@ CREATE TABLE `ubi` (
   `idUbicacion` int(11) NOT NULL,
   `NombreUbicacion` varchar(40) NOT NULL,
   `idDepartamento` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `ubi`
@@ -471,25 +491,25 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
-  MODIFY `idMarca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `idMarca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT de la tabla `materiales`
 --
 ALTER TABLE `materiales`
-  MODIFY `idMateriales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `idMateriales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT de la tabla `prov`
 --
 ALTER TABLE `prov`
-  MODIFY `idProveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `idProveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de la tabla `tipoprod`
 --
 ALTER TABLE `tipoprod`
-  MODIFY `idTipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `idTipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de la tabla `ubi`
