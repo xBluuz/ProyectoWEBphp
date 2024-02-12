@@ -31,13 +31,15 @@
         function activarAnimacion() {
             let filtros = document.getElementById('modal');
             if (localStorage.getItem('estado_nav') == 1) {
-                filtros.classList.remove('animado')
-                filtros.classList.toggle('pickUp')
-                filtros.classList.remove('static')
+                filtros.classList.remove('animado');
+                filtros.classList.toggle('pickUp');
+                filtros.classList.remove('static');
                 //sig.innerHTML = '>'
                 localStorage.setItem('estado_nav', 0);
             } else {
+                filtros.classList.remove('pickUp')
                 filtros.classList.toggle('animado')
+                filtros.classList.remove('static')
                 //sig.innerHTML = '<'
                 localStorage.setItem('estado_nav', 1);
             }
@@ -49,7 +51,9 @@
             const filtros = document.getElementById('modal');
             if (localStorage.getItem('estado_nav') == 1) {
                 //sig.innerHTML = '>'
+                filtros.classList.remove('animado')
                 filtros.classList.toggle('static')
+                filtros.classList.remove('pickUp')
             }
         }
         function ConfirmDelete() {
@@ -139,7 +143,6 @@
             <?php include("./InformacionU.php") ?>
             <div class="add" id="añadir" style="display:none;">
                 <?php include("./PanelAñadir.php") ?>
-                
             </div>
             <div class="add" id="edit" style="display:none;">
                 <?php include("./PanelEditar.php") ?>
