@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-02-2024 a las 09:31:42
+-- Tiempo de generación: 13-02-2024 a las 09:09:58
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -56,7 +56,6 @@ INSERT INTO `aula` (`idUbicacion`, `idAula`, `idDepartamento`) VALUES
 (2, '2T7', 3),
 (2, '2T8', 3),
 (2, '2T9', 3),
-(2, 'BT.2', 6),
 (1, 'BT1.2', 6),
 (2, 'BT2', 1),
 (2, 'BT3', 1),
@@ -142,10 +141,20 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`idUser`, `NombreUser`, `NombreCompleto`, `Password`, `idDepartamento`, `Nivel`) VALUES
-(13, 'Admin', 'Merche Lopez', '1234', 1, 1),
-(16, 'Juan', 'Juan Antonio', '1234', 6, 3),
-(17, 'Adri', 'Adrian Morer', '1234', 2, 3),
-(19, 'Javi', 'Javier Morer', '1234', 1, 3);
+(13, 'Admin', 'Merche Lopez', 'd322e6fd7b4d3383562b9dfdb918a62e07a634a8af68dea3e172034647d2f2c2', 1, 1),
+(16, 'Juan', 'Juan Antonio', '6038f600d1af4bf6187cfdff90d7115f0b188410462fe77d00fd2d0ec7a13d21', 6, 2),
+(17, 'Adri', 'Adrian Morer', '3c3f398e4c11803f63b22a6730fb1161a25f5fb299f078f6e96215d8ef1c4488', 1, 2),
+(19, 'Javi', 'Javier Morer', '9c8d2a4dbf811a755f227cb804ebdc37e09ad76f2cd533c4a5bfe836c0570ad4', 1, 3),
+(22, 'Merche', 'Merche Lopez', '9dd9c53282d281fb37bcacfea5509cbeda8b335a143f64f5b7d06ae1e3accc75', 1, 1),
+(23, 'Rafa', 'Rafael Navarro', '34d544f5576628288f0ba151af8a8ec93326213ce6376688d1684f8a30fcf09f', 2, 3),
+(27, 'Cristina', 'Crisitina Serrano', '0092350ac0d6648ec093543745bb9a0b7ec00394e01c536a5e61f71d86831855', 3, 3),
+(28, 'Izan', 'Izan Ruiz', '2b6dd24f1f2ee61040b6ca1189ed8673f1bee19a8a91fe1a44663b6006814e8b', 3, 2),
+(29, 'Diego', 'Diego Julian', 'd39a4946a35c7a1fd2f898d99a4218db343468e79a778814b1f7c064720ba203', 2, 2),
+(30, 'Daniel', 'Daniel Planté', '73bdffa30be02fdd17eb3ed955058477007f39facd36c5af59282ea0abd077a2', 4, 2),
+(31, 'Victor', 'Victor Archidona', 'e70e23df4a1c4b73f61bddd52328458ab6e4934b3126de4b7aded2ed412b259e', 4, 3),
+(32, 'Asier', 'Asier Ezquerra', 'b75269ade25668a81d32aea042a22645580e4bb8c880f9f95738d964ef3772d0', 5, 2),
+(33, 'Darius', 'Darius Rus', '487c4e64d9963d350d43a5c1fb9f941601d8653bf4c406ea6e67a53538449498', 5, 3),
+(34, 'Geany', 'Geany Vlad', '92bae09e9c42b296ea6a89a52dbdcff4127bdb799f7100241c0317db7942b54a', 6, 3);
 
 -- --------------------------------------------------------
 
@@ -174,7 +183,7 @@ INSERT INTO `marca` (`idMarca`, `NombreMarca`, `idDepartamento`) VALUES
 (8, 'Blueweld by Telwin.', 5),
 (9, 'KINGBOLEN', 5),
 (10, 'Brembo', 5),
-(11, 'Marca7', 1),
+(11, 'Renault', 5),
 (12, 'Marca8', 2),
 (13, 'Marca9', 3),
 (14, 'Marca10', 4),
@@ -269,7 +278,8 @@ INSERT INTO `materiales` (`idMateriales`, `NombreMat`, `idAula`, `Cantidad`, `id
 (55, 'Sillas', 'BT5', 30, 1, 3, 1),
 (56, 'Soldadores Eléctricos', 'BT6', 15, 36, 8, 5),
 (57, 'Comprobador de baterías', 'BT6', 10, 37, 9, 5),
-(58, 'Discos de freno', 'BT7', 50, 38, 10, 5);
+(58, 'Discos de freno', 'BT7', 50, 38, 10, 5),
+(60, 'Motores', 'BT8.2', 10, 9, 11, 5);
 
 -- --------------------------------------------------------
 
@@ -300,7 +310,7 @@ INSERT INTO `prov` (`idProveedor`, `Nombre`, `Direccion`, `Municipio`, `Provinci
 (5, 'AUSA Special Steels | Aceros especiales y Aceros calibrados ', 'Polígono Malpica, Calle D, 19, 50016 Zaragoza', 'Zaragoza', 'Zaragoza', 976138122, 9, 2),
 (6, 'Euroferrasa', 'C. Geranio, 57, 50171 La Puebla de Alfindén, Zaragoza', 'Zaragoza', 'Zaragoza', 628733751, 15, 6),
 (7, 'Pcbox', 'C. de la Corona de Aragón, 14, 50009 Zaragoza', 'Zaragoza', 'Zaragoza', 976557473, 34, 1),
-(9, 'Proveedor7', 'Dirección7 Zaragoza', 'Zaragoza', 'Zaragoza', 159357852, 7, 1),
+(9, 'Loma', 'Av. de Cataluña, 290, 50014 Zaragoza', 'Zaragoza', 'Zaragoza', 976574828, 6, 5),
 (10, 'Proveedor8', 'Dirección8 Zaragoza', 'Zaragoza', 'Zaragoza', 753951456, 8, 2),
 (11, 'Proveedor9', 'Dirección9 Zaragoza', 'Zaragoza', 'Zaragoza', 258147369, 9, 3),
 (12, 'Proveedor10', 'Dirección10 Zaragoza', 'Zaragoza', 'Zaragoza', 369258147, 10, 4),
@@ -485,7 +495,7 @@ ALTER TABLE `filtro_selec`
 -- AUTO_INCREMENT de la tabla `login`
 --
 ALTER TABLE `login`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT de la tabla `marca`
@@ -497,7 +507,7 @@ ALTER TABLE `marca`
 -- AUTO_INCREMENT de la tabla `materiales`
 --
 ALTER TABLE `materiales`
-  MODIFY `idMateriales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `idMateriales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT de la tabla `prov`
