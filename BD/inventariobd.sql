@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-02-2024 a las 09:09:58
+-- Tiempo de generación: 13-02-2024 a las 09:28:45
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -154,7 +154,7 @@ INSERT INTO `login` (`idUser`, `NombreUser`, `NombreCompleto`, `Password`, `idDe
 (31, 'Victor', 'Victor Archidona', 'e70e23df4a1c4b73f61bddd52328458ab6e4934b3126de4b7aded2ed412b259e', 4, 3),
 (32, 'Asier', 'Asier Ezquerra', 'b75269ade25668a81d32aea042a22645580e4bb8c880f9f95738d964ef3772d0', 5, 2),
 (33, 'Darius', 'Darius Rus', '487c4e64d9963d350d43a5c1fb9f941601d8653bf4c406ea6e67a53538449498', 5, 3),
-(34, 'Geany', 'Geany Vlad', '92bae09e9c42b296ea6a89a52dbdcff4127bdb799f7100241c0317db7942b54a', 6, 3);
+(34, 'Geany', 'Geany Vlad', 'ead3b2c3c75c191df3fdff534c1ba9c437b5411423aba8e22219c55d3a253cc0', 6, 3);
 
 -- --------------------------------------------------------
 
