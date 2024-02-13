@@ -49,11 +49,16 @@
         }
         function activarAnimacionRefresh() {
             const filtros = document.getElementById('modal');
+            let id = window.location.href.split("?")[1].split("=")[0];
             if (localStorage.getItem('estado_nav') == 1) {
                 //sig.innerHTML = '>'
                 filtros.classList.remove('animado')
                 filtros.classList.toggle('static')
                 filtros.classList.remove('pickUp')
+            }
+            if (localStorage.getItem('estado_edit') == 1 || id == "Editar") {
+                let edit = document.getElementById('edit');
+                edit.style.display = 'flex';
             }
         }
         function ConfirmDelete() {
@@ -84,17 +89,31 @@
         function refresh() {
             refresh
         }
+        function closeEditar() {
+            let edit = document.getElementById('edit');
+            
+            if (edit.style.display == 'none') {
+                localStorage.setItem('estado_edit', 1)
+                edit.style.display = 'flex';
+            } else {
+                localStorage.setItem('estado_edit', 0)
+                edit.style.display = 'none';
+            }
+        }
+
         function activarEditar(a) {
             var id = a;
-            window.location="PanelAdmin.php?Editar="+id;
-           
-                let edit = document.getElementById('edit');
-                if (edit.style.display == 'none') {
+            window.location = "PanelAdmin.php?Editar=" + id;
+
+            let edit = document.getElementById('edit');
+            if (edit.style.display == 'none') {
+                localStorage.setItem('estado_edit', 1)
                 edit.style.display = 'flex';
-                } else {
+            } else {
+                localStorage.setItem('estado_edit', 0)
                 edit.style.display = 'none';
-                }
-                return false;
+            }
+            return false;
         }
     </script>
 </head>

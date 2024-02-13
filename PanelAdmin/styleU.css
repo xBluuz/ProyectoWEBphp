@@ -283,3 +283,10 @@ main{
     border: 0;
     border-radius: 25px;
 }
+.online{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    
+}

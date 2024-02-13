@@ -15,7 +15,7 @@
                     $idAula = $row['idAula'];
                     echo "<option value='$idAula'>$idAula</option>";
                 }
-            }
+            } 
             ?>
         </select>
         <input type="number" name="NCantidad" id="NCantidad" required value="<?php echo $Cantidad ?>" class="input_add">
@@ -52,7 +52,12 @@
                 }
             }
             ?>
-            <input type="submit" value="Editar" name="editarrr" class="submit_add">
+            <div class="online">
+                <input type="submit" value="Editar" name="editarrr" class="submit_add">
+                <div class="cerrar_container" onclick="closeEditar()">
+                    <div class="cerrar_add_button" class="submit_add" id="cerrar_add_button" style="display:flex; justify-content: center; align-items: center;">Cerrar
+                </div>
+            </div>
     </form>
 </div>
     <?php
