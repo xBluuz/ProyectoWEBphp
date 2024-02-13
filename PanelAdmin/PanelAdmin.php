@@ -84,19 +84,19 @@
         function refresh() {
             refresh
         }
-        function activarEditar() {
-            let edit = document.getElementById('edit');
-            if (edit.style.display == 'none') {
+        function activarEditar(a) {
+            var id = a;
+            window.location="PanelAdmin.php?Editar="+id;
+           
+                let edit = document.getElementById('edit');
+                if (edit.style.display == 'none') {
                 edit.style.display = 'flex';
-                console.log('hola')
-            } else {
+                } else {
                 edit.style.display = 'none';
-                console.log('adios')
-            }
+                }
+                return false;
         }
-
     </script>
-
 </head>
 
 <body onload='activarAnimacionRefresh()'>
