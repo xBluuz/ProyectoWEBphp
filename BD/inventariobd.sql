@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-02-2024 a las 09:28:45
+-- Tiempo de generación: 13-02-2024 a las 10:48:49
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -233,21 +233,20 @@ CREATE TABLE `materiales` (
 --
 
 INSERT INTO `materiales` (`idMateriales`, `NombreMat`, `idAula`, `Cantidad`, `idProveedor`, `idMarca`, `idDepartamento`) VALUES
-(5, 'Pantalla', '2T3', 30, 2, 2, 1),
-(6, 'Ordenador', '2T3', 30, 9, 1, 1),
-(7, 'Raton', '2T3', 30, 15, 4, 1),
-(8, 'Teclado', '2T3', 30, 24, 4, 1),
-(9, 'Silla', '2T3', 30, 17, 3, 1),
-(12, 'Pantalla', '2T4', 30, 2, 2, 1),
-(13, 'Ordenador', '2T4', 30, 9, 1, 1),
-(14, 'Raton', '2T4', 30, 15, 4, 1),
-(15, 'Teclado', '2T4', 30, 24, 4, 1),
-(16, 'Silla', '2T4', 30, 17, 3, 1),
-(19, 'Pantalla', '2T2', 15, 2, 2, 1),
-(20, 'Ordenador', '2T2', 15, 9, 1, 1),
-(21, 'Raton', '2T2', 15, 15, 4, 1),
-(22, 'Teclado', '2T2', 15, 24, 4, 1),
-(23, 'Silla', '2T2', 15, 17, 3, 1),
+(5, 'Pantalla', '2T3', 30, 7, 1, 1),
+(6, 'Ordenador', '2T3', 30, 7, 39, 1),
+(7, 'Raton', '2T3', 30, 7, 4, 1),
+(8, 'Teclado', '2T3', 30, 7, 4, 1),
+(9, 'Silla', '2T3', 30, 1, 3, 1),
+(12, 'Pantalla', '2T4', 30, 7, 2, 1),
+(13, 'Ordenador', '2T4', 30, 7, 39, 1),
+(14, 'Raton', '2T4', 30, 7, 4, 1),
+(15, 'Teclado', '2T4', 30, 7, 4, 1),
+(16, 'Silla', '2T4', 30, 1, 3, 1),
+(19, 'Pantalla', '2T2', 15, 7, 2, 1),
+(21, 'Raton', '2T2', 15, 7, 4, 1),
+(22, 'Teclado', '2T2', 15, 7, 4, 1),
+(23, 'Silla', '2T2', 15, 1, 3, 1),
 (28, 'Mesa', 'ST1', 30, 1, 3, 2),
 (29, 'Silla', 'ST1', 30, 1, 3, 2),
 (30, 'Tornos', 'ST1', 15, 2, 36, 2),
@@ -310,7 +309,7 @@ INSERT INTO `prov` (`idProveedor`, `Nombre`, `Direccion`, `Municipio`, `Provinci
 (5, 'AUSA Special Steels | Aceros especiales y Aceros calibrados ', 'Polígono Malpica, Calle D, 19, 50016 Zaragoza', 'Zaragoza', 'Zaragoza', 976138122, 9, 2),
 (6, 'Euroferrasa', 'C. Geranio, 57, 50171 La Puebla de Alfindén, Zaragoza', 'Zaragoza', 'Zaragoza', 628733751, 15, 6),
 (7, 'Pcbox', 'C. de la Corona de Aragón, 14, 50009 Zaragoza', 'Zaragoza', 'Zaragoza', 976557473, 34, 1),
-(9, 'Loma', 'Av. de Cataluña, 290, 50014 Zaragoza', 'Zaragoza', 'Zaragoza', 976574828, 6, 5),
+(9, 'Loma', 'Av. de Cataluña, 290, 50014 Zaragoza', 'Zaragoza', 'Zaragoza', 976574828, 12, 5),
 (10, 'Proveedor8', 'Dirección8 Zaragoza', 'Zaragoza', 'Zaragoza', 753951456, 8, 2),
 (11, 'Proveedor9', 'Dirección9 Zaragoza', 'Zaragoza', 'Zaragoza', 258147369, 9, 3),
 (12, 'Proveedor10', 'Dirección10 Zaragoza', 'Zaragoza', 'Zaragoza', 369258147, 10, 4),
