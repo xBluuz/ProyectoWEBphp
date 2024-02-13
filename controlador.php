@@ -7,7 +7,7 @@ if (!empty($_POST['aceptar'])) {
         echo "Los Campos estas vacios";
     } else {
         $usuario = $_POST["usuario"];
-        $contraseña = $_POST["contraseña"];
+        $contraseña = hash("sha256", $_POST["contraseña"]);
 
 
         $stmt = $conexion->prepare("SELECT * FROM login WHERE NombreUser=? AND Password=?");

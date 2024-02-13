@@ -97,7 +97,6 @@
             console.log('anadir cerrado');
         }
     </script>
-
 </head>
 
 <body onload='activarAnimacionRefresh()'>
@@ -149,9 +148,6 @@
             </div>
             <div class="add"  id="edit" style="display:none;">
                 <?php include("./PanelEditar.php") ?>
-                <div class="div_cerrar_add_button">
-                    <button class="cerrar_add_button" onclick="cerrarEditar()" id="cerrar_add_button">x</button>
-                </div>
             </div>
         </div>
     </main>
