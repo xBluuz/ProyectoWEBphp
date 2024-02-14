@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-02-2024 a las 10:48:49
+-- Tiempo de generación: 14-02-2024 a las 09:45:10
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `inventariobd`
 --
+CREATE DATABASE IF NOT EXISTS `inventariobd` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `inventariobd`;
 
 -- --------------------------------------------------------
 
@@ -27,12 +29,21 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `aula`
 --
 
-CREATE TABLE `aula` (
+DROP TABLE IF EXISTS `aula`;
+CREATE TABLE IF NOT EXISTS `aula` (
   `idUbicacion` int(11) NOT NULL,
   `idAula` varchar(5) NOT NULL,
-  `idDepartamento` int(11) NOT NULL
+  `idDepartamento` int(11) NOT NULL,
+  PRIMARY KEY (`idAula`),
+  KEY `idUbicacion` (`idUbicacion`),
+  KEY `idDepartamento` (`idDepartamento`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Truncar tablas antes de insertar `aula`
+--
+
+TRUNCATE TABLE `aula`;
 --
 -- Volcado de datos para la tabla `aula`
 --
@@ -80,11 +91,18 @@ INSERT INTO `aula` (`idUbicacion`, `idAula`, `idDepartamento`) VALUES
 -- Estructura de tabla para la tabla `departec`
 --
 
-CREATE TABLE `departec` (
-  `idDepartamento` int(11) NOT NULL,
-  `NombreDepar` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+DROP TABLE IF EXISTS `departec`;
+CREATE TABLE IF NOT EXISTS `departec` (
+  `idDepartamento` int(11) NOT NULL AUTO_INCREMENT,
+  `NombreDepar` varchar(50) NOT NULL,
+  PRIMARY KEY (`idDepartamento`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4;
 
+--
+-- Truncar tablas antes de insertar `departec`
+--
+
+TRUNCATE TABLE `departec`;
 --
 -- Volcado de datos para la tabla `departec`
 --
@@ -103,13 +121,20 @@ INSERT INTO `departec` (`idDepartamento`, `NombreDepar`) VALUES
 -- Estructura de tabla para la tabla `filtro_selec`
 --
 
-CREATE TABLE `filtro_selec` (
-  `idSelec` int(11) NOT NULL,
+DROP TABLE IF EXISTS `filtro_selec`;
+CREATE TABLE IF NOT EXISTS `filtro_selec` (
+  `idSelec` int(11) NOT NULL AUTO_INCREMENT,
   `Nombre_Selec` varchar(30) NOT NULL,
   `value` varchar(50) NOT NULL,
-  `idDepartamento` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `idDepartamento` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idSelec`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
+--
+-- Truncar tablas antes de insertar `filtro_selec`
+--
+
+TRUNCATE TABLE `filtro_selec`;
 --
 -- Volcado de datos para la tabla `filtro_selec`
 --
@@ -127,15 +152,23 @@ INSERT INTO `filtro_selec` (`idSelec`, `Nombre_Selec`, `value`, `idDepartamento`
 -- Estructura de tabla para la tabla `login`
 --
 
-CREATE TABLE `login` (
-  `idUser` int(11) NOT NULL,
+DROP TABLE IF EXISTS `login`;
+CREATE TABLE IF NOT EXISTS `login` (
+  `idUser` int(11) NOT NULL AUTO_INCREMENT,
   `NombreUser` varchar(30) NOT NULL,
   `NombreCompleto` varchar(50) NOT NULL,
   `Password` text NOT NULL,
   `idDepartamento` int(11) NOT NULL,
-  `Nivel` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `Nivel` int(11) NOT NULL,
+  PRIMARY KEY (`idUser`),
+  KEY `idDepartamento` (`idDepartamento`)
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4;
 
+--
+-- Truncar tablas antes de insertar `login`
+--
+
+TRUNCATE TABLE `login`;
 --
 -- Volcado de datos para la tabla `login`
 --
@@ -162,12 +195,19 @@ INSERT INTO `login` (`idUser`, `NombreUser`, `NombreCompleto`, `Password`, `idDe
 -- Estructura de tabla para la tabla `marca`
 --
 
-CREATE TABLE `marca` (
-  `idMarca` int(11) NOT NULL,
+DROP TABLE IF EXISTS `marca`;
+CREATE TABLE IF NOT EXISTS `marca` (
+  `idMarca` int(11) NOT NULL AUTO_INCREMENT,
   `NombreMarca` varchar(30) NOT NULL,
-  `idDepartamento` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `idDepartamento` int(11) NOT NULL,
+  PRIMARY KEY (`idMarca`)
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4;
 
+--
+-- Truncar tablas antes de insertar `marca`
+--
+
+TRUNCATE TABLE `marca`;
 --
 -- Volcado de datos para la tabla `marca`
 --
@@ -184,10 +224,10 @@ INSERT INTO `marca` (`idMarca`, `NombreMarca`, `idDepartamento`) VALUES
 (9, 'KINGBOLEN', 5),
 (10, 'Brembo', 5),
 (11, 'Renault', 5),
-(12, 'Marca8', 2),
-(13, 'Marca9', 3),
-(14, 'Marca10', 4),
-(15, 'Marca11', 5),
+(12, 'Fmf', 6),
+(13, 'Rs Pro', 6),
+(14, 'Schneider', 6),
+(15, 'Hellermanntyton', 6),
 (16, 'Marca12', 6),
 (17, 'Marca13', 1),
 (18, 'Marca14', 2),
@@ -210,7 +250,8 @@ INSERT INTO `marca` (`idMarca`, `NombreMarca`, `idDepartamento`) VALUES
 (36, 'Pinacho', 2),
 (37, 'Makita', 2),
 (38, 'Big red', 5),
-(39, 'Hp', 1);
+(39, 'Hp', 1),
+(40, 'Belllabot', 4);
 
 -- --------------------------------------------------------
 
@@ -218,16 +259,26 @@ INSERT INTO `marca` (`idMarca`, `NombreMarca`, `idDepartamento`) VALUES
 -- Estructura de tabla para la tabla `materiales`
 --
 
-CREATE TABLE `materiales` (
-  `idMateriales` int(11) NOT NULL,
+DROP TABLE IF EXISTS `materiales`;
+CREATE TABLE IF NOT EXISTS `materiales` (
+  `idMateriales` int(11) NOT NULL AUTO_INCREMENT,
   `NombreMat` varchar(30) NOT NULL,
   `idAula` varchar(5) NOT NULL,
   `Cantidad` int(11) NOT NULL,
   `idProveedor` int(11) NOT NULL,
   `idMarca` int(11) NOT NULL,
-  `idDepartamento` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `idDepartamento` int(11) NOT NULL,
+  PRIMARY KEY (`idMateriales`),
+  KEY `idAula` (`idAula`),
+  KEY `idProveedor` (`idProveedor`),
+  KEY `idMarca` (`idMarca`)
+) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8mb4;
 
+--
+-- Truncar tablas antes de insertar `materiales`
+--
+
+TRUNCATE TABLE `materiales`;
 --
 -- Volcado de datos para la tabla `materiales`
 --
@@ -278,7 +329,15 @@ INSERT INTO `materiales` (`idMateriales`, `NombreMat`, `idAula`, `Cantidad`, `id
 (56, 'Soldadores Eléctricos', 'BT6', 15, 36, 8, 5),
 (57, 'Comprobador de baterías', 'BT6', 10, 37, 9, 5),
 (58, 'Discos de freno', 'BT7', 50, 38, 10, 5),
-(60, 'Motores', 'BT8.2', 10, 9, 11, 5);
+(60, 'Motores', 'BT8.2', 10, 9, 11, 5),
+(65, 'Disyuntores', '1T2', 12, 10, 12, 6),
+(67, 'Fusibles', '1T2', 30, 10, 13, 6),
+(69, 'Sensores ', '1T3', 30, 10, 14, 6),
+(70, 'Kits Terminales', '1T4', 30, 39, 15, 6),
+(71, 'Mesas', '1T5', 30, 1, 3, 4),
+(72, 'Sillas', '1T5', 30, 1, 3, 4),
+(75, 'Acero Inoxidable', '1T6', 300, 44, 5, 4),
+(77, 'Robot Industrial', '1T6.1', 1, 45, 40, 4);
 
 -- --------------------------------------------------------
 
@@ -286,17 +345,25 @@ INSERT INTO `materiales` (`idMateriales`, `NombreMat`, `idAula`, `Cantidad`, `id
 -- Estructura de tabla para la tabla `prov`
 --
 
-CREATE TABLE `prov` (
-  `idProveedor` int(11) NOT NULL,
+DROP TABLE IF EXISTS `prov`;
+CREATE TABLE IF NOT EXISTS `prov` (
+  `idProveedor` int(11) NOT NULL AUTO_INCREMENT,
   `Nombre` varchar(60) NOT NULL,
   `Direccion` varchar(80) NOT NULL,
   `Municipio` varchar(30) NOT NULL,
   `Provincia` varchar(30) NOT NULL,
   `Telefono` int(9) NOT NULL,
   `idTipo` int(11) NOT NULL,
-  `idDepartamento` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `idDepartamento` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idProveedor`),
+  KEY `idTipo` (`idTipo`)
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4;
 
+--
+-- Truncar tablas antes de insertar `prov`
+--
+
+TRUNCATE TABLE `prov`;
 --
 -- Volcado de datos para la tabla `prov`
 --
@@ -310,7 +377,7 @@ INSERT INTO `prov` (`idProveedor`, `Nombre`, `Direccion`, `Municipio`, `Provinci
 (6, 'Euroferrasa', 'C. Geranio, 57, 50171 La Puebla de Alfindén, Zaragoza', 'Zaragoza', 'Zaragoza', 628733751, 15, 6),
 (7, 'Pcbox', 'C. de la Corona de Aragón, 14, 50009 Zaragoza', 'Zaragoza', 'Zaragoza', 976557473, 34, 1),
 (9, 'Loma', 'Av. de Cataluña, 290, 50014 Zaragoza', 'Zaragoza', 'Zaragoza', 976574828, 12, 5),
-(10, 'Proveedor8', 'Dirección8 Zaragoza', 'Zaragoza', 'Zaragoza', 753951456, 8, 2),
+(10, 'Distrimel Zaragoza', 'Urb. local 13, 50010 Zaragoza', 'Zaragoza', 'Zaragoza', 976078277, 13, 6),
 (11, 'Proveedor9', 'Dirección9 Zaragoza', 'Zaragoza', 'Zaragoza', 258147369, 9, 3),
 (12, 'Proveedor10', 'Dirección10 Zaragoza', 'Zaragoza', 'Zaragoza', 369258147, 10, 4),
 (13, 'Proveedor11', 'Dirección11 Zaragoza', 'Zaragoza', 'Zaragoza', 147369258, 11, 5),
@@ -337,7 +404,10 @@ INSERT INTO `prov` (`idProveedor`, `Nombre`, `Direccion`, `Municipio`, `Provinci
 (35, 'Carretillas HC', 'C. Romero, 6, 50171 La Puebla de Alfindén, Zaragoza', 'Zaragoza', 'Zaragoza', 976455281, 6, 5),
 (36, 'Fercas Soldadura SL', 'Av. de la Jota, 52, 50014 Zaragoza', 'Zaragoza', 'Zaragoza', 976474353, 6, 5),
 (37, 'Baterias Litio', 'C. de Desiderio Escosura, 47, Delicias, 50005 Zaragoza', 'Zaragoza', 'Zaragoza', 629367697, 6, 5),
-(38, 'Frenos Bolca', 'C. del Alcalde Burriel, 7, 50005 Zaragoza', 'Zaragoza', 'Zaragoza', 976550188, 6, 5);
+(38, 'Frenos Bolca', 'C. del Alcalde Burriel, 7, 50005 Zaragoza', 'Zaragoza', 'Zaragoza', 976550188, 6, 5),
+(39, 'Rs Iberia ', 'Av. de Bruselas, 6, Planta 3, 28108 Alcobendas, Madrid', 'Madrid', 'Madrid', 915129699, 25, 6),
+(44, 'AUSA Special Steels | Aceros especiales y Aceros calibrados ', 'Polígono Malpica, Calle D, 19, 50016 Zaragoza', 'Zaragoza', 'Zaragoza', 976138122, 5, 4),
+(45, 'Moontech Industrial', 'C. María de Luna, 11, Nave 7, 50018 Zaragoza', 'Zaragoza', 'Zaragoza', 976588391, 5, 4);
 
 -- --------------------------------------------------------
 
@@ -345,12 +415,19 @@ INSERT INTO `prov` (`idProveedor`, `Nombre`, `Direccion`, `Municipio`, `Provinci
 -- Estructura de tabla para la tabla `tipoprod`
 --
 
-CREATE TABLE `tipoprod` (
-  `idTipo` int(11) NOT NULL,
+DROP TABLE IF EXISTS `tipoprod`;
+CREATE TABLE IF NOT EXISTS `tipoprod` (
+  `idTipo` int(11) NOT NULL AUTO_INCREMENT,
   `NombreTipo` varchar(40) NOT NULL,
-  `idDepartamento` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `idDepartamento` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idTipo`)
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4;
 
+--
+-- Truncar tablas antes de insertar `tipoprod`
+--
+
+TRUNCATE TABLE `tipoprod`;
 --
 -- Volcado de datos para la tabla `tipoprod`
 --
@@ -378,7 +455,7 @@ INSERT INTO `tipoprod` (`idTipo`, `NombreTipo`, `idDepartamento`) VALUES
 (20, 'Impresoras', 1),
 (21, 'Herramientas', 2),
 (22, 'Comunicaciones', 3),
-(23, 'Sensores', 4),
+(23, 'Sensores', 6),
 (24, 'Neumáticos', 5),
 (25, 'Instalaciones eléctricas', 6),
 (26, 'Suministros de oficina', 1),
@@ -395,12 +472,19 @@ INSERT INTO `tipoprod` (`idTipo`, `NombreTipo`, `idDepartamento`) VALUES
 -- Estructura de tabla para la tabla `ubi`
 --
 
-CREATE TABLE `ubi` (
-  `idUbicacion` int(11) NOT NULL,
+DROP TABLE IF EXISTS `ubi`;
+CREATE TABLE IF NOT EXISTS `ubi` (
+  `idUbicacion` int(11) NOT NULL AUTO_INCREMENT,
   `NombreUbicacion` varchar(40) NOT NULL,
-  `idDepartamento` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `idDepartamento` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idUbicacion`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
+--
+-- Truncar tablas antes de insertar `ubi`
+--
+
+TRUNCATE TABLE `ubi`;
 --
 -- Volcado de datos para la tabla `ubi`
 --
@@ -408,123 +492,6 @@ CREATE TABLE `ubi` (
 INSERT INTO `ubi` (`idUbicacion`, `NombreUbicacion`, `idDepartamento`) VALUES
 (1, 'Pabellón', 0),
 (2, 'Edificio Talleres', 0);
-
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `aula`
---
-ALTER TABLE `aula`
-  ADD PRIMARY KEY (`idAula`),
-  ADD KEY `idUbicacion` (`idUbicacion`),
-  ADD KEY `idDepartamento` (`idDepartamento`);
-
---
--- Indices de la tabla `departec`
---
-ALTER TABLE `departec`
-  ADD PRIMARY KEY (`idDepartamento`);
-
---
--- Indices de la tabla `filtro_selec`
---
-ALTER TABLE `filtro_selec`
-  ADD PRIMARY KEY (`idSelec`);
-
---
--- Indices de la tabla `login`
---
-ALTER TABLE `login`
-  ADD PRIMARY KEY (`idUser`),
-  ADD KEY `idDepartamento` (`idDepartamento`);
-
---
--- Indices de la tabla `marca`
---
-ALTER TABLE `marca`
-  ADD PRIMARY KEY (`idMarca`);
-
---
--- Indices de la tabla `materiales`
---
-ALTER TABLE `materiales`
-  ADD PRIMARY KEY (`idMateriales`),
-  ADD KEY `idAula` (`idAula`),
-  ADD KEY `idProveedor` (`idProveedor`),
-  ADD KEY `idMarca` (`idMarca`);
-
---
--- Indices de la tabla `prov`
---
-ALTER TABLE `prov`
-  ADD PRIMARY KEY (`idProveedor`),
-  ADD KEY `idTipo` (`idTipo`);
-
---
--- Indices de la tabla `tipoprod`
---
-ALTER TABLE `tipoprod`
-  ADD PRIMARY KEY (`idTipo`);
-
---
--- Indices de la tabla `ubi`
---
-ALTER TABLE `ubi`
-  ADD PRIMARY KEY (`idUbicacion`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `departec`
---
-ALTER TABLE `departec`
-  MODIFY `idDepartamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
---
--- AUTO_INCREMENT de la tabla `filtro_selec`
---
-ALTER TABLE `filtro_selec`
-  MODIFY `idSelec` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT de la tabla `login`
---
-ALTER TABLE `login`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
-
---
--- AUTO_INCREMENT de la tabla `marca`
---
-ALTER TABLE `marca`
-  MODIFY `idMarca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
-
---
--- AUTO_INCREMENT de la tabla `materiales`
---
-ALTER TABLE `materiales`
-  MODIFY `idMateriales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
-
---
--- AUTO_INCREMENT de la tabla `prov`
---
-ALTER TABLE `prov`
-  MODIFY `idProveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
-
---
--- AUTO_INCREMENT de la tabla `tipoprod`
---
-ALTER TABLE `tipoprod`
-  MODIFY `idTipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
-
---
--- AUTO_INCREMENT de la tabla `ubi`
---
-ALTER TABLE `ubi`
-  MODIFY `idUbicacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
