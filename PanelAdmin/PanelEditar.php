@@ -52,12 +52,15 @@
                 }
             }
             ?>
-            <div class="online">
-                <input type="submit" value="Editar" name="editarrr" class="submit_add">
-                <div class="cerrar_container" onclick="closeEditar()">
-                    <div class="cerrar_add_button" class="submit_add" id="cerrar_add_button" style="display:flex; justify-content: center; align-items: center;">Cerrar
-                </div>
+        </select>
+        <div class="button_container">
+            <div class="cerrar_container">
+                <div class="cerrar_add_button" onclick="closeEditar()" id="cerrar_add_button">Cerrar</div>
             </div>
+            <div class="submit_container">
+                <input type="submit" value="Editar" name="editarrr" class="submit_add">
+            </div>
+        </div>
     </form>
 </div>
     <?php

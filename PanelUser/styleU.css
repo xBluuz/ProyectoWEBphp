@@ -18,6 +18,19 @@ header {
     background-color: #E71D36;
     height: 7.15vh;
 }
+.logo_container{
+    margin-top: 10px;
+    left: 20px;
+    position: absolute;
+}
+.logo{
+    height: 50px;
+    width: 50px;
+}
+.texto_logo{
+    height: 3.5%;
+    width: 300px;
+}
 .texto1 {
     display: flex;
     justify-content: center;

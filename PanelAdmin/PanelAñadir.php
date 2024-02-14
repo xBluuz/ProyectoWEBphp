@@ -57,13 +57,13 @@
             }
             ?>
         </select>
+        <div class="button_container">
             <div class="cerrar_container">
-                <button class="cerrar_add_button" onclick="cerrarAñadir()" id="cerrar_add_button">Cerrar</button>
+                <div class="cerrar_add_button" onclick="cerrarAñadir()" id="cerrar_add_button">Cerrar</div>
             </div>
             <div class="submit_container">
                 <input type="submit" value="Send" name="send" class="submit_add" onclick="refresh()">
             </div>
         </div>
-    
     </form>
 </div>

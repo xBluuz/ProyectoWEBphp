@@ -58,6 +58,10 @@
 
 <body onload='activarAnimacionRefresh()'>
     <header>
+        <div class="logo_container">
+            <img src="../Img/logo_salesianos.png" alt="" class="logo">
+            <img src="../Img/logo_con_texto.png" alt="" class="texto_logo">
+        </div>
         <div class="texto1">
             <strong>Panel Usuario de
                 <?php include("./DepU.php") ?>

@@ -91,7 +91,6 @@
         }
         function closeEditar() {
             let edit = document.getElementById('edit');
-            
             if (edit.style.display == 'none') {
                 localStorage.setItem('estado_edit', 1)
                 edit.style.display = 'flex';
@@ -120,6 +119,10 @@
 
 <body onload='activarAnimacionRefresh()'>
     <header>
+        <div class="logo_container">
+            <img src="../Img/logo_salesianos.png" alt="" class="logo">
+            <img src="../Img/logo_con_texto.png" alt="" class="texto_logo">
+        </div>
         <div class="texto1">
             <strong>Panel Administrador</strong>
         </div>

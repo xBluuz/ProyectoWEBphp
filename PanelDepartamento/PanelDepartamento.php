@@ -68,7 +68,7 @@
                 añadir.style.display = 'none';
             }
         }
-        function cerrarAñadir(){
+        function cerrarAñadir() {
             let añadir = document.getElementById('añadir');
             if (añadir.style.display == 'flex') {
                 añadir.style.display = 'none';
@@ -77,30 +77,57 @@
             }
             console.log('anadir cerrado');
         }
-        function activarEditar() {
-            let edit = document.getElementById('edit');
-            if (edit.style.display == 'none') {
+        function refresh() {
+            refresh
+        }
+        function activarAnimacionRefresh() {
+            const filtros = document.getElementById('modal');
+            let id = window.location.href.split("?")[1].split("=")[0];
+            if (localStorage.getItem('estado_nav') == 1) {
+                //sig.innerHTML = '>'
+                filtros.classList.remove('animado')
+                filtros.classList.toggle('static')
+                filtros.classList.remove('pickUp')
+            }
+            if (localStorage.getItem('estado_edit') == 1 || id == "Editar") {
+                let edit = document.getElementById('edit');
                 edit.style.display = 'flex';
-                console.log('hola')
-            } else {
-                edit.style.display = 'flex';
-                console.log('adios')
             }
         }
-        function cerrarEditar(){
+        function closeEditar() {
             let edit = document.getElementById('edit');
-            if (edit.style.display == 'flex') {
-                edit.style.display = 'none';
-            } else {
+            if (edit.style.display == 'none') {
+                localStorage.setItem('estado_edit', 1)
                 edit.style.display = 'flex';
+            } else {
+                localStorage.setItem('estado_edit', 0)
+                edit.style.display = 'none';
             }
-            console.log('anadir cerrado');
+        }
+
+        function activarEditar(a) {
+            var id = a;
+            window.location = "PanelDepartamento.php?Editar=" + id;
+
+            let edit = document.getElementById('edit');
+            if (edit.style.display == 'none') {
+                localStorage.setItem('estado_edit', 1)
+                edit.style.display = 'flex';
+            } else {
+                localStorage.setItem('estado_edit', 0)
+                edit.style.display = 'none';
+            }
+            return false;
         }
     </script>
 </head>
 
 <body onload='activarAnimacionRefresh()'>
     <header>
+        <div class="logo_container">
+            <img src="../Img/logo_salesianos.png" alt="" class="logo">
+            <img src="../Img/logo_con_texto.png" alt="" class="texto_logo">
+        </div>
         <div class="texto1">
             <strong>Panel Administrador de
                 <?php include("./DepU.php") ?>
@@ -142,9 +169,6 @@
             <?php include("./InformacionU.php") ?>
             <div class="add" id="añadir" style="display:none;">
                 <?php include("./PanelAñadir.php") ?>
-                <div class="div_cerrar_add_button">
-                    <button class="cerrar_add_button" onclick="cerrarAñadir()" id="cerrar_add_button">x</button>
-                </div>
             </div>
             <div class="add"  id="edit" style="display:none;">
                 <?php include("./PanelEditar.php") ?>

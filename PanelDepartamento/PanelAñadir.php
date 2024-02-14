@@ -43,22 +43,16 @@
             }
             ?>
         </select>
-        <div class="submit_container">
-            <input type="submit" value="Send" name="send" class="submit_add">
+        <div class="button_container">
+            <div class="cerrar_container">
+                <div class="cerrar_add_button" onclick="cerrarAñadir()" id="cerrar_add_button">Cerrar</div>
+            </div>
+            <div class="submit_container">
+                <input type="submit" value="Send" name="send" class="submit_add" onclick="refresh()">
+            </div>
         </div>
     </form>
 </div>
-<script>
-    function cerrarAñadir(){
-            let añadir = document.getElementById('añadir');
-            if (añadir.style.display != '') {
-                añadir.style.display = 'none';
-            } else {
-                añadir.style.display = 'flex';
-            }
-            console.log('anadir cerrado');
-        }
-</script>
 <?php
 include("./conexion_bd.php");
 
