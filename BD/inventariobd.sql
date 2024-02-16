@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-02-2024 a las 21:04:44
+-- Tiempo de generación: 16-02-2024 a las 21:09:36
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -192,21 +192,6 @@ INSERT INTO `marca` (`idMarca`, `NombreMarca`, `idDepartamento`) VALUES
 (17, 'Toyota', 5),
 (18, 'Canon', 3),
 (19, 'Sennheiser', 3),
-(20, 'Marca16', 4),
-(21, 'Marca17', 5),
-(22, 'Marca18', 6),
-(23, 'Marca19', 1),
-(24, 'Marca20', 2),
-(25, 'Marca21', 3),
-(26, 'Marca22', 4),
-(27, 'Marca23', 5),
-(28, 'Marca24', 6),
-(29, 'Marca25', 1),
-(30, 'Marca26', 2),
-(31, 'Marca27', 3),
-(32, 'Marca28', 4),
-(33, 'Marca29', 5),
-(34, 'Marca30', 6),
 (36, 'Pinacho', 2),
 (37, 'Makita', 2),
 (38, 'Big red', 5),
@@ -341,24 +326,6 @@ INSERT INTO `prov` (`idProveedor`, `Nombre`, `Direccion`, `Municipio`, `Provinci
 (12, 'Elesa', 'C. de Zurbarán, 16, Chamberí, 28010 Madrid', 'Madrid', 'Madrid', 913197930, 6, 5),
 (13, 'Fotosonic', 'Av. de Cesáreo Alierta, 47, 50008 Zaragoza', 'Zaragoza', 'Zaragoza', 976299648, 10, 3),
 (14, 'VIENA AUDIO ', 'C. de Manuel Serrano Sanz, 3, Local Izdo, 50009 Zaragoza', 'Zaragoza', 'Zaragoza', 976567940, 10, 3),
-(15, 'Proveedor13', 'Dirección13 Zaragoza', 'Zaragoza', 'Zaragoza', 963741852, 13, 1),
-(16, 'Proveedor14', 'Dirección14 Zaragoza', 'Zaragoza', 'Zaragoza', 741852963, 14, 2),
-(17, 'Proveedor15', 'Dirección15 Zaragoza', 'Zaragoza', 'Zaragoza', 369147852, 15, 3),
-(18, 'Proveedor16', 'Dirección16 Zaragoza', 'Zaragoza', 'Zaragoza', 852741963, 16, 4),
-(19, 'Proveedor17', 'Dirección17 Zaragoza', 'Zaragoza', 'Zaragoza', 159852369, 17, 5),
-(20, 'Proveedor18', 'Dirección18 Zaragoza', 'Zaragoza', 'Zaragoza', 963258147, 18, 6),
-(21, 'Proveedor19', 'Dirección19 Zaragoza', 'Zaragoza', 'Zaragoza', 456123789, 19, 1),
-(22, 'Proveedor20', 'Dirección20 Zaragoza', 'Zaragoza', 'Zaragoza', 147852369, 20, 2),
-(23, 'Proveedor21', 'Dirección21 Zaragoza', 'Zaragoza', 'Zaragoza', 258369147, 21, 3),
-(24, 'Proveedor22', 'Dirección22 Zaragoza', 'Zaragoza', 'Zaragoza', 987321654, 22, 4),
-(25, 'Proveedor23', 'Dirección23 Zaragoza', 'Zaragoza', 'Zaragoza', 654321789, 23, 5),
-(26, 'Proveedor24', 'Dirección24 Zaragoza', 'Zaragoza', 'Zaragoza', 321789456, 24, 6),
-(27, 'Proveedor25', 'Dirección25 Zaragoza', 'Zaragoza', 'Zaragoza', 789456123, 25, 1),
-(28, 'Proveedor26', 'Dirección26 Zaragoza', 'Zaragoza', 'Zaragoza', 456789321, 26, 2),
-(29, 'Proveedor27', 'Dirección27 Zaragoza', 'Zaragoza', 'Zaragoza', 321456789, 27, 3),
-(30, 'Proveedor28', 'Dirección28 Zaragoza', 'Zaragoza', 'Zaragoza', 789321456, 28, 4),
-(31, 'Proveedor29', 'Dirección29 Zaragoza', 'Zaragoza', 'Zaragoza', 654789321, 29, 5),
-(32, 'Proveedor30', 'Dirección30 Zaragoza', 'Zaragoza', 'Zaragoza', 987456321, 30, 6),
 (34, 'Velca', 'C. de Monegros, 6, Local, 50003 Zaragoza', 'Zaragoza', 'Zaragoza', 633361705, 9, 2),
 (35, 'Carretillas HC', 'C. Romero, 6, 50171 La Puebla de Alfindén, Zaragoza', 'Zaragoza', 'Zaragoza', 976455281, 6, 5),
 (36, 'Fercas Soldadura SL', 'Av. de la Jota, 52, 50014 Zaragoza', 'Zaragoza', 'Zaragoza', 976474353, 6, 5),
