@@ -2,6 +2,7 @@
     <form method="post" class="formulario_add" action="InformaAñadir.php">
         <input type="text" name="NMaterial" id="NMaterial" required placeholder="Material" class="input_add">
         <select name="NAula" id="NAula" class="select_add" required>
+            <option value="" disabled selected>Seleccione un aula</option>
             <?php
             include("./conexion_bd.php");
             $sql = "SELECT * FROM aula";
@@ -16,6 +17,7 @@
         </select>
         <input type="number" name="NCantidad" id="NCantidad" required placeholder="Cantidad" class="input_add">
         <select name="NProeveedor" id="NProeveedor" class="select_add" required>
+            <option value="" disabled selected>Seleccione un proveedor</option>
             <?php
             include("./conexion_bd.php");
             $sql = "SELECT * FROM prov";
@@ -30,6 +32,7 @@
             ?>
         </select>
         <select name="NMarca" id="NMarca" class="select_add" required>
+            <option value="" disabled selected>Seleccione una marca</option>
             <?php
             include("./conexion_bd.php");
             $sql = "SELECT * FROM marca";
@@ -44,6 +47,7 @@
             ?>
         </select>
         <select name="NDepartamento" id="NDepartamento" class="select_add" required>
+            <option value="" disabled selected>Seleccione un departamento</option>
             <?php
             include("./conexion_bd.php");
             $sql = "SELECT * FROM departec";

@@ -2,6 +2,7 @@
     <form method="post" class="formulario_add">
         <input type="text" name="NMaterial" id="NMaterial" required placeholder="Material" class="input_add">
         <select name="NAula" id="NAula" class="select_add" required>
+            <option value="" disabled selected>Seleccione un aula</option>
             <?php
             include("./conexion_bd.php");
             $sql = "SELECT a.idAula FROM aula AS a INNER JOIN departec AS d ON a.idDepartamento = d.idDepartamento WHERE a.idDepartamento = $_SESSION[deparamento];";
@@ -16,6 +17,7 @@
         </select>
         <input type="number" name="NCantidad" id="NCantidad" class="input_add" required>
         <select name="NProeveedor" id="NProeveedor" class="select_add" required>
+            <option value="" disabled selected>Seleccione un proveedor</option>
             <?php
             include("./conexion_bd.php");
             $sql = "SELECT * FROM prov";
@@ -30,6 +32,7 @@
             ?>
         </select>
         <select name="NMarca" id="NMarca" class="select_add" required>
+            <option value="" disabled selected>Seleccione una marca</option>    
             <?php
             include("./conexion_bd.php");
             $sql = "SELECT * FROM marca";
