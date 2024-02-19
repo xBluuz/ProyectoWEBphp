@@ -170,6 +170,7 @@
                 <?php include("./PanelEditar.php") ?>
             </div>
         </div>
+        <?php include("./PanelAula.php") ?>
     </main>
 
 </body>
