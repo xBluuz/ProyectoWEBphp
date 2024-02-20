@@ -6,5 +6,4 @@ include("./conexion_bd.php");
     $conexion->query($sql);
     header("location:PanelAdmin.php");
     }
-
 ?>

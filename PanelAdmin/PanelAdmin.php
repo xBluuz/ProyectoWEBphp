@@ -171,6 +171,9 @@
             </div>
         </div>
         <?php include("./PanelAula.php") ?>
+        <?php include("./PanelProveedor.php") ?>
+        <?php include("./PanelMarca.php") ?>
+        <?php include("./PanelDepart.php") ?>
     </main>
 
 </body>
