@@ -169,11 +169,13 @@
             <div class="add" id="edit" style="display:none;">
                 <?php include("./PanelEditar.php") ?>
             </div>
+            <div class="add">
+                <?php include("./PanelAula.php") ?>
+            </div>
+            <?php include("./PanelProveedor.php") ?>
+            <?php include("./PanelMarca.php") ?>
+            <?php include("./PanelDepart.php") ?>
         </div>
-        <?php include("./PanelAula.php") ?>
-        <?php include("./PanelProveedor.php") ?>
-        <?php include("./PanelMarca.php") ?>
-        <?php include("./PanelDepart.php") ?>
     </main>
 
 </body>
