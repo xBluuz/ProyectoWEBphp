@@ -114,6 +114,86 @@
             }
             return false;
         }
+        function activarAAula(){
+            let aula = document.getElementById('aula');
+            if (aula.style.display == 'none') {
+                añadir.style.display = 'none';
+                aula.style.display = 'flex';
+            } else {
+                aula.style.display = 'none';
+                añadir.style.display = 'flex';
+            }
+        }
+        function activarcerrarAula(){
+            let aula = document.getElementById('aula');
+            if (aula.style.display == 'flex') {
+                aula.style.display = 'none';
+                añadir.style.display = 'flex';
+            } else {
+                aula.style.display = 'flex';
+                añadir.style.display = 'none';
+            }
+        }
+        function activarAProv(){
+            let prov = document.getElementById('Prov');
+            if (prov.style.display == 'none') {
+                añadir.style.display = 'none';
+                prov.style.display = 'flex';
+            } else {
+                prov.style.display = 'none';
+                añadir.style.display = 'flex';
+            }
+        }
+        function activarcerrarProv(){
+            let prov = document.getElementById('Prov');
+            if (prov.style.display == 'flex') {
+                prov.style.display = 'none';
+                añadir.style.display = 'flex';
+            } else {
+                prov.style.display = 'flex';
+                añadir.style.display = 'none';
+            }
+        }
+        function activarMarca(){
+            let Marca = document.getElementById('Marca');
+            if (Marca.style.display == 'none') {
+                añadir.style.display = 'none';
+                Marca.style.display = 'flex';
+            } else {
+                Marca.style.display = 'none';
+                añadir.style.display = 'flex';
+            }
+        }
+        function activarcerrarMarca(){
+            let Marca = document.getElementById('Marca');
+            if (Marca.style.display == 'flex') {
+                Marca.style.display = 'none';
+                añadir.style.display = 'flex';
+            } else {
+                Marca.style.display = 'flex';
+                añadir.style.display = 'none';
+            }
+        }
+        function activarDepart(){
+            let Depart = document.getElementById('Departs');
+            if (Depart.style.display == 'none') {
+                añadir.style.display = 'none';
+                Depart.style.display = 'flex';
+            } else {
+                Depart.style.display = 'none';
+                añadir.style.display = 'flex';
+            }
+        }
+        function activarcerrarDepart(){
+            let Depart = document.getElementById('Departs');
+            if (Depart.style.display == 'flex') {
+                Depart.style.display = 'none';
+                añadir.style.display = 'flex';
+            } else {
+                Depart.style.display = 'flex';
+                añadir.style.display = 'none';
+            }
+        }
     </script>
 </head>
 
@@ -169,15 +249,20 @@
             <div class="add" id="edit" style="display:none;">
                 <?php include("./PanelEditar.php") ?>
             </div>
-            <div class="add">
+            <div class="add" id="aula" style="display:none">
                 <?php include("./PanelAula.php") ?>
             </div>
+            <div class="add" id="Prov" style="display:none">
             <?php include("./PanelProveedor.php") ?>
+            </div>
+            <div class="add" id="Marca" style="display:none">
             <?php include("./PanelMarca.php") ?>
+            </div>
+            <div class="add" id="Departs" style="display:none">
             <?php include("./PanelDepart.php") ?>
+            </div>
         </div>
     </main>
 
-</body>
-
+</body>      
 </html>

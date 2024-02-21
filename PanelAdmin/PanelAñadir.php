@@ -16,7 +16,7 @@
                 }
                 ?>
             </select>
-            <button class="add_button">+</button>
+            <button class="add_button" onclick="activarAAula()">+</button>
         </div>
         <input type="number" name="NCantidad" id="NCantidad" required placeholder="Cantidad" class="input_add">
         <div class="select_container">
@@ -35,7 +35,7 @@
                 }
                 ?>
             </select>
-            <button class="add_button">+</button>
+            <button class="add_button" onclick="activarAProv()">+</button>
         </div>
         <div class="select_container">
             <select name="NMarca" id="NMarca" class="select_add" required>
@@ -53,7 +53,7 @@
                 }
                 ?>
             </select>
-            <button class="add_button">+</button>
+            <button class="add_button" onclick="activarMarca()">+</button>
         </div>
         <div class="select_container">
             <select name="NDepartamento" id="NDepartamento" class="select_add" required>
@@ -71,7 +71,7 @@
                 }
                 ?>
             </select>
-            <button class="add_button">+</button>
+            <button class="add_button" onclick="activarDepart()">+</button>
         </div>
         <div class="button_container">
             <div class="cerrar_container">

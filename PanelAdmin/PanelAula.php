@@ -33,7 +33,7 @@
         </select>
         <div class="button_container">
             <div class="cerrar_container">
-                <div class="cerrar_add_button">Cerrar</div>
+                <div class="cerrar_add_button" onclick="activarcerrarAula()">Cerrar</div>
             </div>
             <div class="submit_container">
                 <input type="submit" value="Añadir" name="AAñadir" class="submit_add">
