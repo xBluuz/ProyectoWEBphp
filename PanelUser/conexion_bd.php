@@ -1,3 +1,3 @@
 <?php
-     $conexion=new mysqli("localhost","qaix255","2E2022sz","qaix255");
+    $conexion=new mysqli("qaix255.informaticasalesianoszgz.org.es","qaix255","2E2022sz","qaix255");
 ?>
