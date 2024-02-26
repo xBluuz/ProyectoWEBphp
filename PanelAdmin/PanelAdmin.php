@@ -15,9 +15,7 @@
         header('Location: ../index.php');
     }
     ?>
-    <script src="PanelAdmin.js">
-       
-    </script>
+    <script src="./PanelAdmin.js"></script>
 </head>
 
 <body onload='activarAnimacionRefresh()'>
