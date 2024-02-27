@@ -36,7 +36,7 @@
                 <div class="cerrar_add_button" onclick="activarcerrarAula()">Cerrar</div>
             </div>
             <div class="submit_container">
-                <input type="submit" value="Añadir" name="AAñadir" class="submit_add">
+                <input type="submit" value="Anadir" name="AAnadir" class="submit_add">
             </div>
         </div>
     </form>

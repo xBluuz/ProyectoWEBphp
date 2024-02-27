@@ -21,7 +21,7 @@
                 <div class="cerrar_add_button" onclick="activarcerrarMarca()">Cerrar</div>
             </div>
             <div class="submit_container">
-            <input type="submit" value="Añadir" name="MAñadir" class="submit_add">
+            <input type="submit" value="Anadir" name="MAnadir" class="submit_add">
             </div>
         </div>
     

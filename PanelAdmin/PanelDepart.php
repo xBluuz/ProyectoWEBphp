@@ -6,7 +6,7 @@
                 <div class="cerrar_add_button" onclick="activarcerrarDepart()">Cerrar</div>
             </div>
             <div class="submit_container">
-                <input type="submit" value="Añadir" name="DAñadir" class="submit_add">
+                <input type="submit" value="Anadir" name="DAnadir" class="submit_add">
             </div>
         </div>    
    

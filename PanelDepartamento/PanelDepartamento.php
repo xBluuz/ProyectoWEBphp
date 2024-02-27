@@ -15,7 +15,7 @@
         header('Location: ../index.php');
     }
     ?>
-    <script src="./PanelDepartamento.js"></script>
+    
 </head>
 
 <body onload='activarAnimacionRefresh()'>
@@ -53,8 +53,8 @@
                     </select>
                 </div>
                 <div class="div_boton_crear">
-                    <h2>Añadir Inventario:</h2>
-                    <button class="boton_crear" name="boton_crear" id="boton_crear" onclick="activarAñadir()">+</button>
+                    <h2>Add Inventario:</h2>
+                    <button class="boton_crear" name="boton_crear" id="boton_crear" onclick="activarAnadir()">+</button>
                 </div>
             </div>
             <div class="div_boton_filtro">
@@ -63,8 +63,8 @@
         </div>
         <div class="principal">
             <?php include("./InformacionU.php") ?>
-            <div class="add" id="añadir" style="display:none;">
-                <?php include("./PanelAñadir.php") ?>
+            <div class="add" id="anadir" style="display:none;">
+                <?php include("./PanelAnadir.php") ?>
             </div>
             <div class="add"  id="edit" style="display:none;">
                 <?php include("./PanelEditar.php") ?>
@@ -72,5 +72,5 @@
         </div>
     </main>
 </body>
-
+<script src="./PanelDepartamento.js"></script>
 </html>

@@ -40,7 +40,7 @@
                 <div class="cerrar_add_button" onclick="activarcerrarProv()">Cerrar</div>
             </div>
             <div class="submit_container">
-            <input type="submit" value="Añadir" name="PAñadir" class="submit_add">
+            <input type="submit" value="Anadir" name="PAnadir" class="submit_add">
             </div>
         </div>
     

@@ -51,20 +51,20 @@ function ConfirmDelete() {
         return false;
     }
 }
-function activarAñadir() {
-    let añadir = document.getElementById('añadir');
-    if (añadir.style.display == 'none') {
-        añadir.style.display = 'flex';
+function activarAnadir() {
+    let anadir = document.getElementById('anadir');
+    if (anadir.style.display == 'none') {
+        anadir.style.display = 'flex';
     } else {
-        añadir.style.display = 'none';
+        anadir.style.display = 'none';
     }
 }
-function cerrarAñadir() {
-    let añadir = document.getElementById('añadir');
-    if (añadir.style.display == 'flex') {
-        añadir.style.display = 'none';
+function cerrarAnadir() {
+    let anadir = document.getElementById('anadir');
+    if (anadir.style.display == 'flex') {
+        anadir.style.display = 'none';
     } else {
-        añadir.style.display = 'flex';
+        anadir.style.display = 'flex';
     }
     console.log('anadir cerrado');
 }
@@ -99,80 +99,80 @@ function activarEditar(a) {
 function activarAAula(){
     let aula = document.getElementById('aula');
     if (aula.style.display == 'none') {
-        añadir.style.display = 'none';
+        anadir.style.display = 'none';
         aula.style.display = 'flex';
     } else {
         aula.style.display = 'none';
-        añadir.style.display = 'flex';
+        anadir.style.display = 'flex';
     }
 }
 function activarcerrarAula(){
     let aula = document.getElementById('aula');
     if (aula.style.display == 'flex') {
         aula.style.display = 'none';
-        añadir.style.display = 'flex';
+        anadir.style.display = 'flex';
     } else {
         aula.style.display = 'flex';
-        añadir.style.display = 'none';
+        anadir.style.display = 'none';
     }
 }
 function activarAProv(){
     let prov = document.getElementById('Prov');
     if (prov.style.display == 'none') {
-        añadir.style.display = 'none';
+        anadir.style.display = 'none';
         prov.style.display = 'flex';
     } else {
         prov.style.display = 'none';
-        añadir.style.display = 'flex';
+        anadir.style.display = 'flex';
     }
 }
 function activarcerrarProv(){
     let prov = document.getElementById('Prov');
     if (prov.style.display == 'flex') {
         prov.style.display = 'none';
-        añadir.style.display = 'flex';
+        anadir.style.display = 'flex';
     } else {
         prov.style.display = 'flex';
-        añadir.style.display = 'none';
+        anadir.style.display = 'none';
     }
 }
 function activarMarca(){
     let Marca = document.getElementById('Marca');
     if (Marca.style.display == 'none') {
-        añadir.style.display = 'none';
+        anadir.style.display = 'none';
         Marca.style.display = 'flex';
     } else {
         Marca.style.display = 'none';
-        añadir.style.display = 'flex';
+        anadir.style.display = 'flex';
     }
 }
 function activarcerrarMarca(){
     let Marca = document.getElementById('Marca');
-    if (Marca.style.display == 'flex') {
+    if (Marca.style.display == 'flex') { 
         Marca.style.display = 'none';
-        añadir.style.display = 'flex';
+        anadir.style.display = 'flex';
     } else {
         Marca.style.display = 'flex';
-        añadir.style.display = 'none';
+        anadir.style.display = 'none';
     }
 }
 function activarDepart(){
     let Depart = document.getElementById('Departs');
     if (Depart.style.display == 'none') {
-        añadir.style.display = 'none';
+        anadir.style.display = 'none';
         Depart.style.display = 'flex';
     } else {
         Depart.style.display = 'none';
-        añadir.style.display = 'flex';
+        anadir.style.display = 'flex';
     }
 }
 function activarcerrarDepart(){
     let Depart = document.getElementById('Departs');
     if (Depart.style.display == 'flex') {
         Depart.style.display = 'none';
-        añadir.style.display = 'flex';
+        anadir.style.display = 'flex';
     } else {
         Depart.style.display = 'flex';
-        añadir.style.display = 'none';
+        anadir.style.display = 'none';
     }
 }

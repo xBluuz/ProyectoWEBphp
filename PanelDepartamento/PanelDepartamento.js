@@ -42,20 +42,20 @@ function ConfirmDelete() {
         return false;
     }
 }
-function activarAñadir() {
-    let añadir = document.getElementById('añadir');
-    if (añadir.style.display == 'none') {
-        añadir.style.display = 'flex';
+function activarAnadir() {
+    let anadir = document.getElementById('anadir');
+    if (anadir.style.display == 'none') {
+        anadir.style.display = 'flex';
     } else {
-        añadir.style.display = 'none';
+        anadir.style.display = 'none';
     }
 }
-function cerrarAñadir() {
-    let añadir = document.getElementById('añadir');
-    if (añadir.style.display == 'flex') {
-        añadir.style.display = 'none';
+function cerrarAnadir() {
+    let anadir = document.getElementById('anadir');
+    if (anadir.style.display == 'flex') {
+        anadir.style.display = 'none';
     } else {
-        añadir.style.display = 'flex';
+        anadir.style.display = 'flex';
     }
     console.log('anadir cerrado');
 }

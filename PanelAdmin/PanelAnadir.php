@@ -1,5 +1,5 @@
 <div class="add_pop">
-    <form method="post" class="formulario_add" action="InformaAñadir.php">
+    <form method="post" class="formulario_add" action="InformaAnadir.php">
         <input type="text" name="NMaterial" id="NMaterial" required placeholder="Material" class="input_add">
         <div class="select_container">
             <select name="NAula" id="NAula" class="select_add" required>
@@ -75,7 +75,7 @@
         </div>
         <div class="button_container">
             <div class="cerrar_container">
-                <div class="cerrar_add_button" onclick="cerrarAñadir()" id="cerrar_add_button">Cerrar</div>
+                <div class="cerrar_add_button" onclick="cerrarAnadir()" id="cerrar_add_button">Cerrar</div>
             </div>
             <div class="submit_container">
                 <input type="submit" value="Send" name="send" class="submit_add" onclick="refresh()">
