@@ -1,12 +1,12 @@
-body{
+body {
     height: 100vh;
     width: 100vw;
     margin: 0px;
     overflow: hidden;
     display: flex;
-} 
+}
 
-.mainContainer{
+.mainContainer {
     height: 100%;
     width: 100%;
     margin: 0px;
@@ -16,13 +16,14 @@ body{
     justify-content: center;
 }
 
-img{
+img {
     position: absolute;
     filter: brightness(50%);
     object-fit: cover;
     z-index: -99999;
 }
-.inicio{
+
+.inicio {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,36 +36,42 @@ img{
     backdrop-filter: blur(7px);
     font-family: 'Poppins', sans-serif;
 }
-.login{
+
+.login {
     font-size: 60px;
     margin-bottom: 20px;
 }
-.informacion{
+
+.informacion {
     font-size: 20px;
     margin-bottom: 28px;
 }
-.miInput{
+
+.miInput {
     font-family: 'Poppins', sans-serif;
 }
-.miInputB{
+
+.miInputB {
     font-family: 'Poppins', sans-serif;
     padding: 4px 30px;
     border-radius: 20px;
     font-size: 20px;
-    border:0;
+    border: 0;
 }
-input[type="text"],input[type="password"]{
+
+input[type="text"],
+input[type="password"] {
     border: none;
     background-color: transparent;
-    border-bottom:2px solid rgb(255, 255, 255) ;
+    border-bottom: 2px solid rgb(255, 255, 255);
     color: rgb(255, 255, 255);
 }
 
-input:focus{
-outline: none;
+input:focus {
+    outline: none;
 }
 
-.contenedorAlerta{
+.contenedorAlerta {
     display: flex;
     justify-content: center;
     position: absolute;
@@ -73,7 +80,7 @@ outline: none;
     margin-top: 5px;
 }
 
-.alerta1{
+.alerta1 {
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
     display: flex;
@@ -92,6 +99,7 @@ outline: none;
     position: absolute;
     animation: alerta1Animation 0.5s ease-out forwards;
 }
+
 .hide {
     animation: hideAnimation 0.5s ease-out forwards;
 }
@@ -101,26 +109,31 @@ outline: none;
         /* opacity: 1; */
         transform: translateY(0px);
     }
+
     100% {
         /* opacity: 0; */
         transform: translateY(-200px);
         display: none;
     }
 }
+
 @keyframes alerta1Animation {
     0% {
         /* opacity: 0; */
         transform: translateY(-200px);
     }
+
     100% {
         /* opacity: 1; */
         transform: translateY(0);
     }
 }
-.X{
+
+.X {
     color: rgb(255, 255, 255);
 }
-.alertaTop{
+
+.alertaTop {
     position: absolute;
     width: 100%;
     height: 100%;

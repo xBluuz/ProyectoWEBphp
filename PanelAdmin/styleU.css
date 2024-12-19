@@ -116,6 +116,7 @@ main{
     align-items: center;
 }
 .filtro_principal{
+    width: 100px;
     border: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 20px;
@@ -131,6 +132,7 @@ main{
     align-items: center;
 }
 .filtro_secundario{
+    width: 100px;
     border: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 20px;
@@ -322,6 +324,24 @@ main{
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr  ;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     }
+    h2{
+        font-size: 16px;
+    }
+    .filtros{
+        height: 30vh;
+    }
+    .filtro_principal, .filtro_secundario{
+        font-size: 16px;
+    }
+    .boton_filtro{
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+    .boton_crear{
+        font-size: 24px;
+        width: 150px;
+    }
 }
 @media (max-width: 1086px) {
     .principal{
@@ -352,6 +372,170 @@ main{
     .principal{
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+    .texto1 {
+        font-size: 16px;
+    }
+    .cs{
+        position: absolute;
+        font-size: 12px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-right: 10px;
+    
+    }
+    .cs-button{
+        display: flex;
+        padding: 5px;
+        background-color: #FFFFFF;
+        border: 0px;
+        border-radius: 5px;
+    }
+    .cs-button a {
+        color: #E71D36;
+        font-family:'Poppins', sans-serif;
+        font-weight: 600;
+        text-decoration: none;
+    }
+    .filter_var{
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        height: 40vh;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(200%);
+        margin-top: 24px;
+    }
+    h2{
+        font-size: 18px;
+    }
+    .filtros{
+        height: 30vh;
+    }
+    .filtro_principal, .filtro_secundario{
+        font-size: 16px;
+    }
+    .animado{
+        transition: 2s;
+        margin-left: 1%;
+        transform: translateY(135%);
+    }
+    .static{
+        transition: 0;
+        margin-left: 1%;
+        transform: translateY(200%);
+    }
+    .div_boton_filtro{
+        position: absolute;
+        transform: translateY(-210%);
+        border: 0;
+        border-radius: 50%;
+    }
+    .boton_filtro{
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        rotate: 270deg;
+    }
+    .boton_crear{
+        font-size: 24px;
+        width: 150px;
+    }
+    .add{
+        margin-left: -20px;
+        display: flex;
+        position: fixed;
+        width: 100%;
+        height: 50vh;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+    }
+    .add_pop{
+        background-color: #E71D36;
+        position: absolute;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        box-shadow: -1px 1px 5px rgba(0,0,0,0.75);
+        border-radius: 25px;
+    }
+    .formulario_add{
+        padding: 40px;
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        position: relative;
+    }
+    .input_add{
+        width: 92%;
+    }
+    .select_container{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+    .select_add{
+        font-family: 'Poppins', sans-serif;
+        width: 100%;
+        border: 0px;
+        background-color: transparent;
+        color: #FFFFFF;
+        border-bottom: 3px solid #FFFFFF;
+    }
+    .select_add option{
+        background-color: #E71D36;
+    }
+    .button_container{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .submit_container{
+        display: flex;
+        width: 50%;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .add_button{
+        border-radius: 50%;
+        font-size: 20px;
+        border: 0;
+        width: 30px;
+        height: 30px;
+        background-color: white;
+        color: #E71D36;
+    }
+    .submit_add{
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        background-color: white;
+        color: #E71D36;
+        width: 50%;
+        border: 0;
+        border-radius: 25px;
+    }
+    .cerrar_container{
+        display: flex;
+        width: 50%;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .cerrar_add_button{
+        display: flex;
+        font-size: 20px;
+        border: 0;
+        width: 50%;
+        border: 0;
+        align-items: center;
+        justify-content: center;
+        border-radius: 25px;
     }
 }
 
