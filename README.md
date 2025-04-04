@@ -6,7 +6,9 @@ Este proyecto ha sido desarrollado como trabajo de fin de curso para la asignatu
 
 La aplicación permite gestionar el inventario de productos ubicados en las aulas de un centro educativo. A través de un sistema de roles, facilita el control, la organización y la consulta del material disponible en cada aula.
 
+
 👥 Roles de Usuario
+
 
 👑 Administrador
 
@@ -19,6 +21,8 @@ Puede añadir nuevos productos y consultar el inventario de las aulas que perten
 👨‍🏫 Usuario del Departamento
 
 Solo puede visualizar las aulas y productos asignados a su departamento.
+
+
 
 ➕ Funcionalidades Destacadas
 
